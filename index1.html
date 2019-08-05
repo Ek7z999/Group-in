@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <title>Group_Table</title>
+        <script type="text/javascript" src="jquery-1.10.0.min.js"></script>
+
+<!--Стили таблиц и кнопок-->
+<style type="text/css">
+.tab01 {table-layout: fixed;
+        width: 50%;
+        border-collapse:collapse;
+        background-color: #FFFF00;    
+        font-size: 18pt;}
+       
+  .tab01 th {background-color: #DEB887;
+         border:2px solid #000000;
+         padding:0;
+         width:200px;}
+  .tab01 td {border:2px solid #000000;      
+         padding:0;
+         width:200px;}  
+.tab01 td p {overflow: hidden;
+         margin:0;
+         padding:2px 4px;
+}
+.tab01 td p:focus {outline:1px solid #4D90FE;}
+        
+  .tab02 {table-layout: fixed;
+         width:200px;
+         border-collapse:collapse;
+         background-color: #C0C0C0;    
+         font-size: 18pt;
+}
+  .tab02 td,th {border:1px solid #000000;
+         border-left:2px solid #000000;
+         border-rigth:2px solid #000000;
+         overflow: hidden;
+         padding:0;
+         width:200px;}
+
+.tab03 {border-collapse:collapse;
+         background-color: #DEB887;    
+         font-size: 18pt;
+         text-align: center;
+         font-weight:bold}
+
+  .tab03 td {border:1px solid #000000;
+         border-top:2px solid #000000;
+         border-left:2px solid #000000;
+         border-rigth:2px solid #000000;          
+         padding:0;
+         width:200px;}
+
+ .www {width: 200px;            
+        font-size: 16pt;}  
+
+ .sp01 {            
+         font-size: 16pt;}    
+ .sp02 {width:165px;            
+         font-size: 13pt;}	
+	  </style>   
+</head>
+
+
+<body>
+<!--Таблица исходная--> 
+<table id="myTable" class="tab01" >
+  <tr>         <th>А</th>          <th>B</th>                  <th>C</th>                <th>D</th>              <th>E</th>       </tr>
+  <tr> <td id="box1">100</td>   <td id="box2">40</td>   <td id="box3">10</td>     <td id="box4">1</td>    <td id="box5">20</td>   </tr>
+  <tr> <td id="box6">100</td>   <td id="box7">41</td>   <td id="box8">11</td>     <td id="box9">2</td>    <td id="box10">21</td>  </tr>
+  <tr> <td id="box11">300</td>  <td id="box12">42</td>  <td id="box13">12</td>     <td id="box14">3</td>   <td id="box15">22</td>  </tr>
+  <tr> <td id="box16">400</td>  <td id="box17">43</td>  <td id="box18">13</td>     <td id="box19">4</td>   <td id="box20">23</td>  </tr>
+  <tr> <td id="box21">500</td>  <td id="box22">44</td>  <td id="box23">14</td>     <td id="box24">5</td>   <td id="box25">24</td>  </tr>
+  <tr> <td id="box26">600</td>  <td id="box27">45</td>  <td id="box28">15</td>     <td id="box29">6</td>   <td id="box30">25</td>  </tr>
+  <tr> <td id="box31">700</td>  <td id="box32">46</td>  <td id="box33">16</td>     <td id="box34">7</td>   <td id="box35">26</td>  </tr>
+  <tr> <td id="box36">800</td>  <td id="box37">47</td>  <td id="box38">17</td>     <td id="box39">8</td>   <td id="box40">27</td>  </tr>
+  <tr> <td id="box41">900</td>  <td id="box42">48</td>  <td id="box43">18</td>     <td id="box44">9</td>   <td id="box45">28</td>  </tr>
+  <tr> <td id="box46">1000</td>  <td id="box47">49</td>  <td id="box48">19</td>     <td id="box49">1</td>   <td id="box50">29</td>  </tr>
+</table>
+
+
+
+
+<!--Выпадающий список--> 
+<form name="f1" class="sp01">
+A:
+<select name="Spisok A" id="s1" class="sp02">
+  <option value="1">Сумма</option>
+  <option value="2">Макс</option>
+  <option value="3">Мин</option>
+  <option value="4">Конкат</option>
+  <option value="5">-----</option>
+  <option value="6">Критер</option>
+</select>
+
+
+<form name="f2" class="sp01">
+B:
+<select name="Spisok B" id="s2" class="sp02">
+  <option value="1">Сумма</option>
+  <option value="2">Макс</option>
+  <option value="3">Мин</option>
+  <option value="4">Конкат</option>
+  <option value="5">-----</option>
+  <option value="6">Критер</option>
+</select>
+
+
+<form name="f3" class="sp01">
+C:
+<select name="Spisok C" id="s3" class="sp02">
+  <option value="1">Сумма</option>
+  <option value="2">Макс</option>
+  <option value="3">Мин</option>
+  <option value="4">Конкат</option>
+  <option value="5">-----</option>
+  <option value="6">Критер</option>
+</select>
+
+
+<form name="f4" class="sp01">
+D:
+<select name="Spisok D" id="s4" class="sp02">
+  <option value="1">Сумма</option>
+  <option value="2">Макс</option>
+  <option value="3">Мин</option>
+  <option value="4">Конкат</option>
+  <option value="5">-----</option>
+  <option value="6">Критер</option>
+</select>
+
+
+<form name="f5" class="sp01">
+E:
+<select name="Spisok E" id="s5" class="sp02">
+  <option value="1">Сумма</option>
+  <option value="2">Макс</option>
+  <option value="3">Мин</option>
+  <option value="4">Конкат</option>
+  <option value="5">-----</option>
+  <option value="6">Критер</option>
+</select>
+
+
+<!--Кнопка сгруппировать--> 
+ <input type="button" onclick="Group1()" value="Сгруппировать"  id="1" class="www">
+</form>
+
+<!--Для итоговых таблиц--> 
+<div id="res0"></div>
+<div id="res1"></div>
+<div id="res2"></div>
+<div id="res3"></div>
+<div id="res4"></div>
+<div id="res5"></div>
+<div id="res6"></div>
+<div id="res7"></div>
+<div id="res8"></div>
+<div id="res9"></div>
+<div id="res10"></div>
+
+<!---Для коррект данных ячеек-->
+<body onload="kor('myTable')">
+
+
+
+
+
+<script language="javascript" type="text/javascript">
+
+<!---Функция коррект данных ячеек-->
+function kor(znach) 
+{
+  var tbl = document.getElementById(znach);
+  for (i=1; i<tbl.rows.length; i++) 
+{
+    var row = tbl.rows[i];
+    for (j=0; j<row.cells.length; j++)
+ {
+      var td = row.cells[i,j];
+      td.innerHTML = '<p tabindex="-1" contenteditable="true">' + td.innerHTML + '</p>';
+    }
+  }
+}
+
+
+
+
+<!---Функция по нажатию кнопки-->
+function Group1() 
+{
+
+<!--Забираем значения ячеек из исходной таблицы--> 
+var a1= document.getElementById("box1").innerText;   var b1= document.getElementById("box2").innerText;   var c1= document.getElementById("box3").innerText;   var d1= document.getElementById("box4").innerText;   var e1= document.getElementById("box5").innerText;
+var a2= document.getElementById("box6").innerText;   var b2= document.getElementById("box7").innerText;   var c2= document.getElementById("box8").innerText;   var d2= document.getElementById("box9").innerText;   var e2= document.getElementById("box10").innerText;
+var a3= document.getElementById("box11").innerText;  var b3= document.getElementById("box12").innerText;  var c3= document.getElementById("box13").innerText;  var d3= document.getElementById("box14").innerText;  var e3= document.getElementById("box15").innerText;
+var a4= document.getElementById("box16").innerText;  var b4= document.getElementById("box17").innerText;  var c4= document.getElementById("box18").innerText;  var d4= document.getElementById("box19").innerText;  var e4= document.getElementById("box20").innerText;
+var a5= document.getElementById("box21").innerText;  var b5= document.getElementById("box22").innerText;  var c5= document.getElementById("box23").innerText;  var d5= document.getElementById("box24").innerText;  var e5= document.getElementById("box25").innerText;
+var a6= document.getElementById("box26").innerText;  var b6= document.getElementById("box27").innerText;  var c6= document.getElementById("box28").innerText;  var d6= document.getElementById("box29").innerText;  var e6= document.getElementById("box30").innerText;
+var a7= document.getElementById("box31").innerText;  var b7= document.getElementById("box32").innerText;  var c7= document.getElementById("box33").innerText;  var d7= document.getElementById("box34").innerText;  var e7= document.getElementById("box35").innerText;
+var a8= document.getElementById("box36").innerText;  var b8= document.getElementById("box37").innerText;  var c8= document.getElementById("box38").innerText;  var d8= document.getElementById("box39").innerText;  var e8= document.getElementById("box40").innerText;
+var a9= document.getElementById("box41").innerText;  var b9= document.getElementById("box42").innerText;  var c9= document.getElementById("box43").innerText;  var d9= document.getElementById("box44").innerText;  var e9= document.getElementById("box45").innerText;
+var a10= document.getElementById("box46").innerText; var b10= document.getElementById("box47").innerText; var c10= document.getElementById("box48").innerText; var d10= document.getElementById("box49").innerText; var e10= document.getElementById("box50").innerText;
+
+<!--Забираем значения селекторов--> 
+var w1=document.getElementById('s1').value;
+var w2=document.getElementById('s2').value;
+var w3=document.getElementById('s3').value;
+var w4=document.getElementById('s4').value;
+var w5=document.getElementById('s5').value;
+var w=[w1, w2, w3, w4, w5];	
+
+if (  (  (/[^[0-9]/.test(a1)) || (/[^[0-9]/.test(a2))  || (/[^[0-9]/.test(a3)) || (/[^[0-9]/.test(a4)) || (/[^[0-9]/.test(a5)) || (/[^[0-9]/.test(a6))  || (/[^[0-9]/.test(a7))  || (/[^[0-9]/.test(a8))  || (/[^[0-9]/.test(a9)) || (/[^[0-9]/.test(a10))  ) &&   ((w1 == 1) || (w1 == 2) || (w1 == 3))  ){alert('В столбец А не введено число');}
+if (  (  (/[^[0-9]/.test(b1)) || (/[^[0-9]/.test(b2))  || (/[^[0-9]/.test(b3)) || (/[^[0-9]/.test(b4)) || (/[^[0-9]/.test(b5)) || (/[^[0-9]/.test(b6))  || (/[^[0-9]/.test(b7))  || (/[^[0-9]/.test(b8))  || (/[^[0-9]/.test(b9)) || (/[^[0-9]/.test(b10))  ) &&   ((w2 == 1) || (w2 == 2) || (w2 == 3))  ){alert('В столбец B не введено число');}
+if (  (  (/[^[0-9]/.test(c1)) || (/[^[0-9]/.test(c2))  || (/[^[0-9]/.test(c3)) || (/[^[0-9]/.test(c4)) || (/[^[0-9]/.test(c5)) || (/[^[0-9]/.test(c6))  || (/[^[0-9]/.test(c7))  || (/[^[0-9]/.test(c8))  || (/[^[0-9]/.test(c9)) || (/[^[0-9]/.test(c10))  ) &&   ((w3 == 1) || (w3 == 2) || (w3 == 3))  ){alert('В столбец C не введено число');}
+if (  (  (/[^[0-9]/.test(d1)) || (/[^[0-9]/.test(d2))  || (/[^[0-9]/.test(d3)) || (/[^[0-9]/.test(d4)) || (/[^[0-9]/.test(d5)) || (/[^[0-9]/.test(d6))  || (/[^[0-9]/.test(d7))  || (/[^[0-9]/.test(d8))  || (/[^[0-9]/.test(d9)) || (/[^[0-9]/.test(d10))  ) &&   ((w4 == 1) || (w4 == 2) || (w4 == 3))  ){alert('В столбец D не введено число');}
+if (  (  (/[^[0-9]/.test(e1)) || (/[^[0-9]/.test(e2))  || (/[^[0-9]/.test(e3)) || (/[^[0-9]/.test(e4)) || (/[^[0-9]/.test(e5)) || (/[^[0-9]/.test(e6))  || (/[^[0-9]/.test(e7))  || (/[^[0-9]/.test(e8))  || (/[^[0-9]/.test(e9)) || (/[^[0-9]/.test(e10))  ) &&   ((w5 == 1) || (w5 == 2) || (w5 == 3))  ){alert('В столбец E не введено число');}
+
+
+if ((w1 == 1) || (w1 == 2) || (w1 == 3)) {a1= +a1; a2= +a2; a3= +a3; a4= +a4; a5= +a5; a6= +a6; a7= +a7; a8= +a8; a9= +a9; a10= +a10;} 
+if ((w2 == 1) || (w2 == 2) || (w2 == 3)) {b1= +b1; b2= +b2; b3= +b3; b4= +b4; b5= +b5; b6= +b6; b7= +b7; b8= +b8; b9= +b9; b10= +b10;}
+if ((w3 == 1) || (w3 == 2) || (w3 == 3)) {c1= +c1; c2= +c2; c3= +c3; c4= +c4; c5= +c5; c6= +c6; c7= +c7; c8= +c8; c9= +c9; c10= +d10;}
+if ((w4 == 1) || (w4 == 2) || (w4 == 3)) {d1= +d1; d2= +d2; d3= +d3; d4= +d4; d5= +d5; d6= +d6; d7= +d7; d8= +d8; d9= +d9; d10= +d10;}
+if ((w5 == 1) || (w5 == 2) || (w5 == 3)) {e1= +e1; e2= +e2; e3= +e3; e4= +e4; e5= +e5; e6= +e6; e7= +e7; e8= +e8; e9= +e9; e10= +e10;}
+
+<!--Переменные для подсчета суммы, макс, мин элемента, конкатенации--> 
+var sumA1=a1; var sumA2=a2; var sumA3=a3; var sumA4=a4; var sumA5=a5; var sumA6=a6; var sumA7=a7; var sumA8=a8; var sumA9=a9; var sumA10=a10;
+var maxA1=a1; var maxA2=a2; var maxA3=a3; var maxA4=a4; var maxA5=a5; var maxA6=a6; var maxA7=a7; var maxA8=a8; var maxA9=a9; var maxA10=a10;
+var minA1=a1; var minA2=a2; var minA3=a3; var minA4=a4; var minA5=a5; var minA6=a6; var minA7=a7; var minA8=a8; var minA9=a9; var minA10=a10;
+var sumB1=b1; var sumB2=b2; var sumB3=b3; var sumB4=b4; var sumB5=b5; var sumB6=b6; var sumB7=b7; var sumB8=b8; var sumB9=b9; var sumB10=b10;
+var maxB1=b1; var maxB2=b2; var maxB3=b3; var maxB4=b4; var maxB5=b5; var maxB6=b6; var maxB7=b7; var maxB8=b8; var maxB9=b9; var maxB10=b10;
+var minB1=b1; var minB2=b2; var minB3=b3; var minB4=b4; var minB5=b5; var minB6=b6; var minB7=b7; var minB8=b8; var minB9=b9; var minB10=b10;
+var sumC1=c1; var sumC2=c2; var sumC3=c3; var sumC4=c4; var sumC5=c5; var sumC6=c6; var sumC7=c7; var sumC8=c8; var sumC9=c9; var sumC10=c10;
+var maxC1=c1; var maxC2=c2; var maxC3=c3; var maxC4=c4; var maxC5=c5; var maxC6=c6; var maxC7=c7; var maxC8=c8; var maxC9=c9; var maxC10=c10;
+var minC1=c1; var minC2=c2; var minC3=c3; var minC4=c4; var minC5=c5; var minC6=c6; var minC7=c7; var minC8=c8; var minC9=c9; var minC10=c10;
+var sumD1=d1; var sumD2=d2; var sumD3=d3; var sumD4=d4; var sumD5=d5; var sumD6=d6; var sumD7=d7; var sumD8=d8; var sumD9=d9; var sumD10=d10;
+var maxD1=d1; var maxD2=d2; var maxD3=d3; var maxD4=d4; var maxD5=d5; var maxD6=d6; var maxD7=d7; var maxD8=d8; var maxD9=d9; var maxD10=d10;
+var minD1=d1; var minD2=d2; var minD3=d3; var minD4=d4; var minD5=d5; var minD6=d6; var minD7=d7; var minD8=d8; var minD9=d9; var minD10=d10;
+var sumE1=e1; var sumE2=e2; var sumE3=e3; var sumE4=e4; var sumE5=e5; var sumE6=e6; var sumE7=e7; var sumE8=e8; var sumE9=e9; var sumE10=e10;
+var maxE1=e1; var maxE2=e2; var maxE3=e3; var maxE4=e4; var maxE5=e5; var maxE6=e6; var maxE7=e7; var maxE8=e8; var maxE9=e9; var maxE10=e10;
+var minE1=e1; var minE2=e2; var minE3=e3; var minE4=e4; var minE5=e5; var minE6=e6; var minE7=e7; var minE8=e8; var minE9=e9; var minE10=e10;
+
+var St0=["A", "B", "C", "D", "E"];
+var St1=[a1, b1, c1, d1, e1];
+var St2=[a2, b2, c2, d2, e2];
+var St3=[a3, b3, c3, d3, e3];
+var St4=[a4, b4, c4, d4, e4];
+var St5=[a5, b5, c5, d5, e5];
+var St6=[a6, b6, c6, d6, e6];
+var St7=[a7, b7, c7, d7, e7];
+var St8=[a8, b8, c8, d8, e8];
+var St9=[a9, b9, c9, d9, e9];
+var St10=[a10, b10, c10, d10, e10];
+
+var ar1=[a1, a2, a3, a4, a5, a6, a7, a8, a9, a10];
+var ar2=[b1, b2, b3, b4, b5, b6, b7, b8, b9, b10];
+var ar3=[c1, c2, c3, c4, c5, c6, c7, c8, c9, c10];
+var ar4=[d1, d2, d3, d4, d5, d6, d7, d8, d9, d10];
+var ar5=[e1, e2, e3, e4, e5, e6, e7, e8, e9, e10];
+
+if ((w1 != 6) && (w2 != 6) && (w3 != 6) && (w4 != 6) && (w5 != 6)) {xr1=0; alert("Выберите критерий!")} else {xr1=1};
+
+if (xr1 == 1){ 
+<!--Группировка, например, n строк по 5 критериям (правда, без сумм,мах,мин и вывода таблицы, просто идея с функцией уникального элемента)  -->
+var n = ar1.length, k1 = 0, A1 = [], B1 = [], C1 = [], D1 = [], E1 = [], k2 = 0, k3 = 0, k4 = 0, k5 = 0 ;
+    for (var i = 0; i < n; i++) { var j = 0;
+                                  while ((j < k1) &&
+                                        ( (A1[j] !== ar1[ i ])&&(w1==6) ||
+                                          (B1[j] !== ar2[ i ])&&(w2==6) ||
+                                          (C1[j] !== ar3[ i ])&&(w3==6) ||
+                                          (D1[j] !== ar4[ i ])&&(w4==6) ||
+                                          (E1[j] !== ar5[ i ])&&(w5==6)   )) {j++;}; 
+                                                                              if (j == k1) {A1[k1++] = ar1[ i ];
+                                                                                            B1[k2++] = ar2[ i ];
+                                                                                            C1[k3++] = ar3[ i ];
+                                                                                            D1[k4++] = ar4[ i ];
+                                                                                            E1[k5++] = ar5[ i ];}; };};
+
+    
+document.write(St0);document.write("<p>");
+document.write(St1);document.write("<p>");
+document.write(St2);document.write("<p>");
+document.write(St3);document.write("<p>");
+document.write(St4);document.write("<p>");
+document.write(St5);document.write("<p>");
+document.write(St6);document.write("<p>");
+document.write(St7);document.write("<p>");
+document.write(St8);document.write("<p>");
+document.write(St9);document.write("<p>");
+document.write(St10);document.write("<p>");
+document.write("------------------------------------"); document.write("<p>");
+document.write("Столбец А" + " "+ A1);document.write("<p>"); 
+document.write("Столбец B" + " " + B1);document.write("<p>"); 
+document.write("Столбец C" + " " + C1);document.write("<p>"); 
+document.write("Столбец D" + " " + D1);document.write("<p>"); 
+document.write("Столбец E" + " " + E1);document.write("<p>"); 
+
+};
+
+
+</script>
+
+</body>
+
+</html>
