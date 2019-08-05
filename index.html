@@ -1,0 +1,529 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <title>Group_Table</title>
+        <script type="text/javascript" src="jquery-1.10.0.min.js"></script>
+
+<!--Стили таблиц и кнопок-->
+<style type="text/css">
+.tab01 {table-layout: fixed;
+        width: 50%;
+        border-collapse:collapse;
+        background-color: #FFFF00;    
+        font-size: 18pt;}
+       
+  .tab01 th {background-color: #DEB887;
+         border:2px solid #000000;
+         padding:0;
+         width:200px;}
+  .tab01 td {border:2px solid #000000;      
+         padding:0;
+         width:200px;}  
+.tab01 td p {overflow: hidden;
+         margin:0;
+         padding:2px 4px;
+}
+.tab01 td p:focus {outline:1px solid #4D90FE;}
+        
+  .tab02 {table-layout: fixed;
+         width:200px;
+         border-collapse:collapse;
+         background-color: #C0C0C0;    
+         font-size: 18pt;
+}
+  .tab02 td,th {border:1px solid #000000;
+         border-left:2px solid #000000;
+         border-rigth:2px solid #000000;
+         overflow: hidden;
+         padding:0;
+         width:200px;}
+
+.tab03 {border-collapse:collapse;
+         background-color: #DEB887;    
+         font-size: 18pt;
+         text-align: center;
+         font-weight:bold}
+
+  .tab03 td {border:1px solid #000000;
+         border-top:2px solid #000000;
+         border-left:2px solid #000000;
+         border-rigth:2px solid #000000;          
+         padding:0;
+         width:200px;}
+
+ .www {width: 200px;            
+        font-size: 16pt;}  
+
+ .sp01 {            
+         font-size: 16pt;}    
+ .sp02 {width:165px;            
+         font-size: 13pt;}	
+	  </style>   
+</head>
+
+
+<body>
+<!--Таблица исходная--> 
+<table id="myTable" class="tab01" >
+  <tr>         <th>А</th>          <th>B</th>                  <th>C</th>                <th>D</th>              <th>E</th>       </tr>
+  <tr> <td id="box1">100</td>   <td id="box2">40</td>   <td id="box3">10</td>     <td id="box4">1</td>    <td id="box5">20</td>   </tr>
+  <tr> <td id="box6">100</td>   <td id="box7">41</td>   <td id="box8">11</td>     <td id="box9">2</td>    <td id="box10">21</td>  </tr>
+  <tr> <td id="box11">300</td>  <td id="box12">42</td>  <td id="box13">12</td>     <td id="box14">3</td>   <td id="box15">22</td>  </tr>
+  <tr> <td id="box16">400</td>  <td id="box17">43</td>  <td id="box18">13</td>     <td id="box19">4</td>   <td id="box20">23</td>  </tr>
+  <tr> <td id="box21">500</td>  <td id="box22">44</td>  <td id="box23">14</td>     <td id="box24">5</td>   <td id="box25">24</td>  </tr>
+  <tr> <td id="box26">600</td>  <td id="box27">45</td>  <td id="box28">15</td>     <td id="box29">6</td>   <td id="box30">25</td>  </tr>
+  <tr> <td id="box31">700</td>  <td id="box32">46</td>  <td id="box33">16</td>     <td id="box34">7</td>   <td id="box35">26</td>  </tr>
+  <tr> <td id="box36">800</td>  <td id="box37">47</td>  <td id="box38">17</td>     <td id="box39">8</td>   <td id="box40">27</td>  </tr>
+  <tr> <td id="box41">900</td>  <td id="box42">48</td>  <td id="box43">18</td>     <td id="box44">9</td>   <td id="box45">28</td>  </tr>
+  <tr> <td id="box46">1000</td>  <td id="box47">49</td>  <td id="box48">19</td>     <td id="box49">1</td>   <td id="box50">29</td>  </tr>
+</table>
+
+<!--Выпадающий список--> 
+<form name="f1" class="sp01">
+A:
+<select name="Spisok A" id="s1" class="sp02">
+  <option value="1">Сумма</option>
+  <option value="2">Макс</option>
+  <option value="3">Мин</option>
+  <option value="4">Конкат</option>
+  <option value="5">-----</option>
+  <option value="6">Критер</option>
+</select>
+
+
+<form name="f2" class="sp01">
+B:
+<select name="Spisok B" id="s2" class="sp02">
+  <option value="1">Сумма</option>
+  <option value="2">Макс</option>
+  <option value="3">Мин</option>
+  <option value="4">Конкат</option>
+  <option value="5">-----</option>
+  <option value="6">Критер</option>
+</select>
+
+
+<form name="f3" class="sp01">
+C:
+<select name="Spisok C" id="s3" class="sp02">
+  <option value="1">Сумма</option>
+  <option value="2">Макс</option>
+  <option value="3">Мин</option>
+  <option value="4">Конкат</option>
+  <option value="5">-----</option>
+  <option value="6">Критер</option>
+</select>
+
+
+<form name="f4" class="sp01">
+D:
+<select name="Spisok D" id="s4" class="sp02">
+  <option value="1">Сумма</option>
+  <option value="2">Макс</option>
+  <option value="3">Мин</option>
+  <option value="4">Конкат</option>
+  <option value="5">-----</option>
+  <option value="6">Критер</option>
+</select>
+
+
+<form name="f5" class="sp01">
+E:
+<select name="Spisok E" id="s5" class="sp02">
+  <option value="1">Сумма</option>
+  <option value="2">Макс</option>
+  <option value="3">Мин</option>
+  <option value="4">Конкат</option>
+  <option value="5">-----</option>
+  <option value="6">Критер</option>
+</select>
+
+
+<!--Кнопка сгруппировать--> 
+ <input type="button" onclick="Group1()" value="Сгруппировать"  id="1" class="www">
+</form>
+
+<!--Для итоговых таблиц--> 
+<div id="res0"></div>
+<div id="res1"></div>
+<div id="res2"></div>
+<div id="res3"></div>
+<div id="res4"></div>
+<div id="res5"></div>
+<div id="res6"></div>
+<div id="res7"></div>
+<div id="res8"></div>
+<div id="res9"></div>
+<div id="res10"></div>
+
+<!---Для коррект данных ячеек-->
+<body onload="kor('myTable')">
+
+
+
+
+
+<script language="javascript" type="text/javascript">
+
+<!---Функция коррект данных ячеек-->
+function kor(znach) 
+{
+  var tbl = document.getElementById(znach);
+  for (i=1; i<tbl.rows.length; i++) 
+{
+    var row = tbl.rows[i];
+    for (j=0; j<row.cells.length; j++)
+ {
+      var td = row.cells[i,j];
+      td.innerHTML = '<p tabindex="-1" contenteditable="true">' + td.innerHTML + '</p>';
+    }
+  }
+}
+
+
+<!---Функция по нажатию кнопки-->
+function Group1() 
+{
+<!--Забираем значения ячеек из исходной таблицы--> 
+var a1= document.getElementById("box1").innerText;   var b1= document.getElementById("box2").innerText;   var c1= document.getElementById("box3").innerText;   var d1= document.getElementById("box4").innerText;   var e1= document.getElementById("box5").innerText;
+var a2= document.getElementById("box6").innerText;   var b2= document.getElementById("box7").innerText;   var c2= document.getElementById("box8").innerText;   var d2= document.getElementById("box9").innerText;   var e2= document.getElementById("box10").innerText;
+var a3= document.getElementById("box11").innerText;  var b3= document.getElementById("box12").innerText;  var c3= document.getElementById("box13").innerText;  var d3= document.getElementById("box14").innerText;  var e3= document.getElementById("box15").innerText;
+var a4= document.getElementById("box16").innerText;  var b4= document.getElementById("box17").innerText;  var c4= document.getElementById("box18").innerText;  var d4= document.getElementById("box19").innerText;  var e4= document.getElementById("box20").innerText;
+var a5= document.getElementById("box21").innerText;  var b5= document.getElementById("box22").innerText;  var c5= document.getElementById("box23").innerText;  var d5= document.getElementById("box24").innerText;  var e5= document.getElementById("box25").innerText;
+var a6= document.getElementById("box26").innerText;  var b6= document.getElementById("box27").innerText;  var c6= document.getElementById("box28").innerText;  var d6= document.getElementById("box29").innerText;  var e6= document.getElementById("box30").innerText;
+var a7= document.getElementById("box31").innerText;  var b7= document.getElementById("box32").innerText;  var c7= document.getElementById("box33").innerText;  var d7= document.getElementById("box34").innerText;  var e7= document.getElementById("box35").innerText;
+var a8= document.getElementById("box36").innerText;  var b8= document.getElementById("box37").innerText;  var c8= document.getElementById("box38").innerText;  var d8= document.getElementById("box39").innerText;  var e8= document.getElementById("box40").innerText;
+var a9= document.getElementById("box41").innerText;  var b9= document.getElementById("box42").innerText;  var c9= document.getElementById("box43").innerText;  var d9= document.getElementById("box44").innerText;  var e9= document.getElementById("box45").innerText;
+var a10= document.getElementById("box46").innerText; var b10= document.getElementById("box47").innerText; var c10= document.getElementById("box48").innerText; var d10= document.getElementById("box49").innerText; var e10= document.getElementById("box50").innerText;
+
+<!--Забираем значения селекторов--> 
+var w1=document.getElementById('s1').value;
+var w2=document.getElementById('s2').value;
+var w3=document.getElementById('s3').value;
+var w4=document.getElementById('s4').value;
+var w5=document.getElementById('s5').value;
+	
+if (  (  (/[^[0-9]/.test(a1)) || (/[^[0-9]/.test(a2))  || (/[^[0-9]/.test(a3)) || (/[^[0-9]/.test(a4)) || (/[^[0-9]/.test(a5)) || (/[^[0-9]/.test(a6))  || (/[^[0-9]/.test(a7))  || (/[^[0-9]/.test(a8))  || (/[^[0-9]/.test(a9)) || (/[^[0-9]/.test(a10))  ) &&   ((w1 == 1) || (w1 == 2) || (w1 == 3))  ){alert('В столбец А не введено число');}
+if (  (  (/[^[0-9]/.test(b1)) || (/[^[0-9]/.test(b2))  || (/[^[0-9]/.test(b3)) || (/[^[0-9]/.test(b4)) || (/[^[0-9]/.test(b5)) || (/[^[0-9]/.test(b6))  || (/[^[0-9]/.test(b7))  || (/[^[0-9]/.test(b8))  || (/[^[0-9]/.test(b9)) || (/[^[0-9]/.test(b10))  ) &&   ((w2 == 1) || (w2 == 2) || (w2 == 3))  ){alert('В столбец B не введено число');}
+if (  (  (/[^[0-9]/.test(c1)) || (/[^[0-9]/.test(c2))  || (/[^[0-9]/.test(c3)) || (/[^[0-9]/.test(c4)) || (/[^[0-9]/.test(c5)) || (/[^[0-9]/.test(c6))  || (/[^[0-9]/.test(c7))  || (/[^[0-9]/.test(c8))  || (/[^[0-9]/.test(c9)) || (/[^[0-9]/.test(c10))  ) &&   ((w3 == 1) || (w3 == 2) || (w3 == 3))  ){alert('В столбец C не введено число');}
+if (  (  (/[^[0-9]/.test(d1)) || (/[^[0-9]/.test(d2))  || (/[^[0-9]/.test(d3)) || (/[^[0-9]/.test(d4)) || (/[^[0-9]/.test(d5)) || (/[^[0-9]/.test(d6))  || (/[^[0-9]/.test(d7))  || (/[^[0-9]/.test(d8))  || (/[^[0-9]/.test(d9)) || (/[^[0-9]/.test(d10))  ) &&   ((w4 == 1) || (w4 == 2) || (w4 == 3))  ){alert('В столбец D не введено число');}
+if (  (  (/[^[0-9]/.test(e1)) || (/[^[0-9]/.test(e2))  || (/[^[0-9]/.test(e3)) || (/[^[0-9]/.test(e4)) || (/[^[0-9]/.test(e5)) || (/[^[0-9]/.test(e6))  || (/[^[0-9]/.test(e7))  || (/[^[0-9]/.test(e8))  || (/[^[0-9]/.test(e9)) || (/[^[0-9]/.test(e10))  ) &&   ((w5 == 1) || (w5 == 2) || (w5 == 3))  ){alert('В столбец E не введено число');}
+
+if ((w1 == 1) || (w1 == 2) || (w1 == 3)) {a1= +a1; a2= +a2; a3= +a3; a4= +a4; a5= +a5; a6= +a6; a7= +a7; a8= +a8; a9= +a9; a10= +a10;} 
+if ((w2 == 1) || (w2 == 2) || (w2 == 3)) {b1= +b1; b2= +b2; b3= +b3; b4= +b4; b5= +b5; b6= +b6; b7= +b7; b8= +b8; b9= +b9; b10= +b10;}
+if ((w3 == 1) || (w3 == 2) || (w3 == 3)) {c1= +c1; c2= +c2; c3= +c3; c4= +c4; c5= +c5; c6= +c6; c7= +c7; c8= +c8; c9= +c9; c10= +d10;}
+if ((w4 == 1) || (w4 == 2) || (w4 == 3)) {d1= +d1; d2= +d2; d3= +d3; d4= +d4; d5= +d5; d6= +d6; d7= +d7; d8= +d8; d9= +d9; d10= +d10;}
+if ((w5 == 1) || (w5 == 2) || (w5 == 3)) {e1= +e1; e2= +e2; e3= +e3; e4= +e4; e5= +e5; e6= +e6; e7= +e7; e8= +e8; e9= +e9; e10= +e10;}
+
+<!--Переменные для проверки равенства критериев--> 
+var t12=0; var t13=0; var t14=0; var t15=0; var t16=0; var t17=0; var t18=0; var t19=0; var t110=0;
+var t23=0; var t24=0; var t25=0; var t26=0; var t27=0; var t28=0; var t29=0; var t210=0;
+var t34=0; var t35=0; var t36=0; var t37=0; var t38=0; var t39=0; var t310=0;
+var t45=0; var t46=0; var t47=0; var t48=0; var t49=0; var t410=0;
+var t56=0; var t57=0; var t58=0; var t59=0; var t510=0;
+var t67=0; var t68=0; var t69=0; var t610=0;
+var t78=0; var t79=0; var t710=0;
+var t89=0; var t810=0;
+var t910=0;
+
+<!--Переменные для подсчета суммы, макс, мин элемента, конкатенации--> 
+var sumA1=a1; var sumA2=a2; var sumA3=a3; var sumA4=a4; var sumA5=a5; var sumA6=a6; var sumA7=a7; var sumA8=a8; var sumA9=a9; var sumA10=a10;
+var maxA1=a1; var maxA2=a2; var maxA3=a3; var maxA4=a4; var maxA5=a5; var maxA6=a6; var maxA7=a7; var maxA8=a8; var maxA9=a9; var maxA10=a10;
+var minA1=a1; var minA2=a2; var minA3=a3; var minA4=a4; var minA5=a5; var minA6=a6; var minA7=a7; var minA8=a8; var minA9=a9; var minA10=a10;
+var sumB1=b1; var sumB2=b2; var sumB3=b3; var sumB4=b4; var sumB5=b5; var sumB6=b6; var sumB7=b7; var sumB8=b8; var sumB9=b9; var sumB10=b10;
+var maxB1=b1; var maxB2=b2; var maxB3=b3; var maxB4=b4; var maxB5=b5; var maxB6=b6; var maxB7=b7; var maxB8=b8; var maxB9=b9; var maxB10=b10;
+var minB1=b1; var minB2=b2; var minB3=b3; var minB4=b4; var minB5=b5; var minB6=b6; var minB7=b7; var minB8=b8; var minB9=b9; var minB10=b10;
+var sumC1=c1; var sumC2=c2; var sumC3=c3; var sumC4=c4; var sumC5=c5; var sumC6=c6; var sumC7=c7; var sumC8=c8; var sumC9=c9; var sumC10=c10;
+var maxC1=c1; var maxC2=c2; var maxC3=c3; var maxC4=c4; var maxC5=c5; var maxC6=c6; var maxC7=c7; var maxC8=c8; var maxC9=c9; var maxC10=c10;
+var minC1=c1; var minC2=c2; var minC3=c3; var minC4=c4; var minC5=c5; var minC6=c6; var minC7=c7; var minC8=c8; var minC9=c9; var minC10=c10;
+var sumD1=d1; var sumD2=d2; var sumD3=d3; var sumD4=d4; var sumD5=d5; var sumD6=d6; var sumD7=d7; var sumD8=d8; var sumD9=d9; var sumD10=d10;
+var maxD1=d1; var maxD2=d2; var maxD3=d3; var maxD4=d4; var maxD5=d5; var maxD6=d6; var maxD7=d7; var maxD8=d8; var maxD9=d9; var maxD10=d10;
+var minD1=d1; var minD2=d2; var minD3=d3; var minD4=d4; var minD5=d5; var minD6=d6; var minD7=d7; var minD8=d8; var minD9=d9; var minD10=d10;
+var sumE1=e1; var sumE2=e2; var sumE3=e3; var sumE4=e4; var sumE5=e5; var sumE6=e6; var sumE7=e7; var sumE8=e8; var sumE9=e9; var sumE10=e10;
+var maxE1=e1; var maxE2=e2; var maxE3=e3; var maxE4=e4; var maxE5=e5; var maxE6=e6; var maxE7=e7; var maxE8=e8; var maxE9=e9; var maxE10=e10;
+var minE1=e1; var minE2=e2; var minE3=e3; var minE4=e4; var minE5=e5; var minE6=e6; var minE7=e7; var minE8=e8; var minE9=e9; var minE10=e10;
+
+var ar1=[a1, a2, a3, a4, a5, a6, a7, a8, a9, a10];
+var ar2=[b1, b2, b3, b4, b5, b6, b7, b8, b9, b10];
+var ar3=[c1, c2, c3, c4, c5, c6, c7, c8, c9, c10];
+var ar4=[d1, d2, d3, d4, d5, d6, d7, d8, d9, d10];
+var ar5=[e1, e2, e3, e4, e5, e6, e7, e8, e9, e10];
+
+var t1=[0, t12, t13, t14, t15, t16, t17, t18, t19, t110];
+var t2=[0,  0,  t23, t24, t25, t26, t27, t28, t29, t210];
+var t3=[0,  0,   0,  t34, t35, t36, t37, t38, t39, t310];
+var t4=[0,  0,   0,   0,  t45, t46, t47, t48, t49, t410];
+var t5=[0,  0,   0,   0,   0,  t56, t57, t58, t59, t510];
+var t6=[0,  0,   0,   0,   0,   0,  t67, t68, t69, t610];
+var t7=[0,  0,   0,   0,   0,   0,   0,  t78, t79, t710];
+var t8=[0,  0,   0,   0,   0,   0,   0,   0,  t89, t810];
+var t9=[0,  0,   0,   0,   0,   0,   0,   0,   0,  t910];
+
+if ((w1 != 6) && (w2 != 6) && (w3 != 6) && (w4 != 6) && (w5 != 6)) {xr1=0; alert("Выберите критерий!")} else {xr1=1};
+
+if (xr1 == 1){ 
+for (i1 = 1; i1 < 10; i1++) {if (((ar1[0]==ar1[i1]) && (w1==6) || (w1 < 6)) && ((ar2[0]==ar2[i1]) && (w2==6) || (w2 < 6)) &&((ar3[0]==ar3[i1]) && (w3==6) || (w3 < 6)) &&((ar4[0]==ar4[i1]) && (w4==6) || (w4 < 6)) &&((ar5[0]==ar5[i1]) && (w5==6) || (w5 < 6))) {t1[i1]=1};};
+for (i2 = 2; i2 < 10; i2++) {if (((ar1[1]==ar1[i2]) && (w1==6) || (w1 < 6)) && ((ar2[1]==ar2[i2]) && (w2==6) || (w2 < 6)) &&((ar3[1]==ar3[i2]) && (w3==6) || (w3 < 6)) &&((ar4[1]==ar4[i2]) && (w4==6) || (w4 < 6)) &&((ar5[1]==ar5[i2]) && (w5==6) || (w5 < 6))) {t2[i2]=1};};
+for (i3 = 3; i3 < 10; i3++) {if (((ar1[2]==ar1[i3]) && (w1==6) || (w1 < 6)) && ((ar2[2]==ar2[i3]) && (w2==6) || (w2 < 6)) &&((ar3[2]==ar3[i3]) && (w3==6) || (w3 < 6)) &&((ar4[2]==ar4[i3]) && (w4==6) || (w4 < 6)) &&((ar5[2]==ar5[i3]) && (w5==6) || (w5 < 6))) {t3[i3]=1};};
+for (i4 = 4; i4 < 10; i4++) {if (((ar1[3]==ar1[i4]) && (w1==6) || (w1 < 6)) && ((ar2[3]==ar2[i4]) && (w2==6) || (w2 < 6)) &&((ar3[3]==ar3[i4]) && (w3==6) || (w3 < 6)) &&((ar4[3]==ar4[i4]) && (w4==6) || (w4 < 6)) &&((ar5[3]==ar5[i4]) && (w5==6) || (w5 < 6))) {t4[i4]=1};};
+for (i5 = 5; i5 < 10; i5++) {if (((ar1[4]==ar1[i5]) && (w1==6) || (w1 < 6)) && ((ar2[4]==ar2[i5]) && (w2==6) || (w2 < 6)) &&((ar3[4]==ar3[i5]) && (w3==6) || (w3 < 6)) &&((ar4[4]==ar4[i5]) && (w4==6) || (w4 < 6)) &&((ar5[4]==ar5[i5]) && (w5==6) || (w5 < 6))) {t5[i5]=1};}
+for (i6 = 6; i6 < 10; i6++) {if (((ar1[5]==ar1[i6]) && (w1==6) || (w1 < 6)) && ((ar2[5]==ar2[i6]) && (w2==6) || (w2 < 6)) &&((ar3[5]==ar3[i6]) && (w3==6) || (w3 < 6)) &&((ar4[5]==ar4[i6]) && (w4==6) || (w4 < 6)) &&((ar5[5]==ar5[i6]) && (w5==6) || (w5 < 6))) {t6[i6]=1};};
+for (i7 = 7; i7 < 10; i7++) {if (((ar1[6]==ar1[i7]) && (w1==6) || (w1 < 6)) && ((ar2[6]==ar2[i7]) && (w2==6) || (w2 < 6)) &&((ar3[6]==ar3[i7]) && (w3==6) || (w3 < 6)) &&((ar4[6]==ar4[i7]) && (w4==6) || (w4 < 6)) &&((ar5[6]==ar5[i7]) && (w5==6) || (w5 < 6))) {t7[i7]=1};};
+for (i8 = 8; i8 < 10; i8++) {if (((ar1[7]==ar1[i8]) && (w1==6) || (w1 < 6)) && ((ar2[7]==ar2[i8]) && (w2==6) || (w2 < 6)) &&((ar3[7]==ar3[i8]) && (w3==6) || (w3 < 6)) &&((ar4[7]==ar4[i8]) && (w4==6) || (w4 < 6)) &&((ar5[7]==ar5[i8]) && (w5==6) || (w5 < 6))) {t8[i8]=1};};
+for (i9 = 9; i9 < 10; i9++) {if (((ar1[8]==ar1[i9]) && (w1==6) || (w1 < 6)) && ((ar2[8]==ar2[i9]) && (w2==6) || (w2 < 6)) &&((ar3[8]==ar3[i9]) && (w3==6) || (w3 < 6)) &&((ar4[8]==ar4[i9]) && (w4==6) || (w4 < 6)) &&((ar5[8]==ar5[i9]) && (w5==6) || (w5 < 6))) {t9[i9]=1};};
+
+<!-->
+var arr0=["A", "B", "C", "D", "E"];
+
+if ((w5 == 5)) {arr0.splice(4, 1);}; if ((w4 == 5)) {arr0.splice(3, 1);}; if ((w3 == 5)) {arr0.splice(2, 1);}; if ((w2 == 5)) {arr0.splice(1, 1);}; if ((w1 == 5)) {arr0.splice(0, 1);};              
+
+var html='<table class="tab03"><tr>';
+for (var i=0;i<arr0.length;i++){html+='<td>'+arr0[i]+'</td>';}
+html+='</tr></table>';
+document.getElementById('res0').innerHTML=html;
+
+<!-->
+var A1=a1; var B1=b1; var C1=c1; var D1=d1; var E1=e1;
+for (j1 = 1; j1 < 10; j1++){ if (t1[j1]==1){sumA1=sumA1+ar1[j1]; sumB1=sumB1+ar2[j1]; sumC1=sumC1+ar3[j1]; sumD1=sumD1+ar4[j1]; sumE1=sumE1+ar5[j1];
+if (maxA1<ar1[j1]){maxA1=ar1[j1]} else{minA1=ar1[j1]}; 
+if (maxB1<ar2[j1]){maxB1=ar2[j1]} else{minB1=ar2[j1]};
+if (maxC1<ar3[j1]){maxC1=ar3[j1]} else{minC1=ar3[j1]};
+if (maxD1<ar4[j1]){maxD1=ar4[j1]} else{minD1=ar4[j1]};
+if (maxE1<ar5[j1]){maxE1=ar5[j1]} else{minE1=ar5[j1]};};};
+if ((w1==1)||(w1==4)){A1=sumA1;}; if (w1==2){A1=maxA1;}; if (w1==3){A1=minA1;};
+if ((w2==1)||(w2==4)){B1=sumB1;}; if (w2==2){B1=maxB1;}; if (w2==3){B1=minB1;};
+if ((w3==1)||(w3==4)){C1=sumC1;}; if (w3==2){C1=maxC1;}; if (w3==3){C1=minC1;}; 
+if ((w4==1)||(w4==4)){D1=sumD1;}; if (w4==2){D1=maxD1;}; if (w4==3){D1=minD1;}; 
+if ((w5==1)||(w5==4)){E1=sumE1;}; if (w5==2){E1=maxE1;}; if (w5==3){E1=minE1;};
+
+var arr1=[A1, B1, C1, D1, E1];
+
+if ((w5 == 5)) {arr1.splice(4, 1);};                                      
+if ((w4 == 5)) {arr1.splice(3, 1);}; 
+if ((w3 == 5)) {arr1.splice(2, 1);}; 
+if ((w2 == 5)) {arr1.splice(1, 1);}; 
+if ((w1 == 5)) {arr1.shift();};   
+
+var html='<table class="tab02"><tr>';
+for (var i=0;i<arr1.length;i++){html+='<td>'+arr1[i]+'</td>';}
+html+='</tr></table>';
+document.getElementById('res1').innerHTML=html;
+
+<!-->
+if (t1[1]==0) {A2=a2; B2=b2; C2=c2; D2=d2; E2=e2;
+for (j2 = 2; j2 < 10; j2++){ if (t2[j2]==1){sumA2=sumA2+ar1[j2]; sumB2=sumB2+ar2[j2]; sumC2=sumC2+ar3[j2]; sumD2=sumD2+ar4[j2]; sumE2=sumE2+ar5[j2];
+if (maxA2<ar1[j2]){maxA2=ar1[j2]} else{minA2=ar1[j2]}; 
+if (maxB2<ar2[j2]){maxB2=ar2[j2]} else{minB2=ar2[j2]};
+if (maxC2<ar3[j2]){maxC2=ar3[j2]} else{minC2=ar3[j2]};
+if (maxD2<ar4[j2]){maxD2=ar4[j2]} else{minD2=ar4[j2]};
+if (maxE2<ar5[j2]){maxE2=ar5[j2]} else{minE2=ar5[j2]};};};
+if ((w1==1)||(w1==4)){A2=sumA2;}; if (w1==2){A2=maxA2;}; if (w1==3){A2=minA2;};
+if ((w2==1)||(w2==4)){B2=sumB2;}; if (w2==2){B2=maxB2;}; if (w2==3){B2=minB2;};
+if ((w3==1)||(w3==4)){C2=sumC2;}; if (w3==2){C2=maxC2;}; if (w3==3){C2=minC2;}; 
+if ((w4==1)||(w4==4)){D2=sumD2;}; if (w4==2){D2=maxD2;}; if (w4==3){D2=minD2;}; 
+if ((w5==1)||(w5==4)){E2=sumE2;}; if (w5==2){E2=maxE2;}; if (w5==3){E2=minE2;}; 
+var arr2=[A2, B2, C2, D2, E2];
+if ((w5 == 5)) {arr2.splice(4, 1);};                                      
+if ((w4 == 5)) {arr2.splice(3, 1);}; 
+if ((w3 == 5)) {arr2.splice(2, 1);}; 
+if ((w2 == 5)) {arr2.splice(1, 1);}; 
+if ((w1 == 5)) {arr2.shift();};   
+var html='<table class="tab02"><tr>';
+for (var i=0;i<arr2.length;i++){html+='<td>'+arr2[i]+'</td>';}
+html+='</tr></table>';
+document.getElementById('res2').innerHTML=html;};
+
+<!-->
+if ((t1[2]==0)&&(t2[2]==0)) {A3=a3; B3=b3; C3=c3; D3=d3; E3=e3;
+for (j3 = 3; j3 < 10; j3++){ if (t3[j3]==1){sumA3=sumA3+ar1[j3]; sumB3=sumB3+ar2[j3]; sumC3=sumC3+ar3[j3]; sumD3=sumD3+ar4[j3]; sumE3=sumE3+ar5[j3];
+if (maxA3<ar1[j3]){maxA3=ar1[j3]} else{minA3=ar1[j3]}; 
+if (maxB3<ar2[j3]){maxB3=ar2[j3]} else{minB3=ar2[j3]};
+if (maxC3<ar3[j3]){maxC3=ar3[j3]} else{minC3=ar3[j3]};
+if (maxD3<ar4[j3]){maxD3=ar4[j3]} else{minD3=ar4[j3]};
+if (maxE3<ar5[j3]){maxE3=ar5[j3]} else{minE3=ar5[j3]};};};
+if ((w1==1)||(w1==4)){A3=sumA3;}; if (w1==2){A3=maxA3;}; if (w1==3){A3=minA3;}; 
+if ((w2==1)||(w2==4)){B3=sumB3;}; if (w2==2){B3=maxB3;}; if (w2==3){B3=minB3;}; 
+if ((w3==1)||(w3==4)){C3=sumC3;}; if (w3==2){C3=maxC3;}; if (w3==3){C3=minC3;}; 
+if ((w4==1)||(w4==4)){D3=sumD3;}; if (w4==2){D3=maxD3;}; if (w4==3){D3=minD3;}; 
+if ((w5==1)||(w5==4)){E3=sumE3;}; if (w5==2){E3=maxE3;}; if (w5==3){E3=minE3;}; 
+var arr3=[A3, B3, C3, D3, E3];
+if ((w5 == 5)) {arr3.splice(4, 1);};                                      
+if ((w4 == 5)) {arr3.splice(3, 1);}; 
+if ((w3 == 5)) {arr3.splice(2, 1);}; 
+if ((w2 == 5)) {arr3.splice(1, 1);}; 
+if ((w1 == 5)) {arr3.shift();};   
+var html='<table class="tab02"><tr>';
+for (var i=0;i<arr3.length;i++){html+='<td>'+arr3[i]+'</td>';}
+html+='</tr></table>';
+document.getElementById('res3').innerHTML=html;};
+
+<!-->
+if ((t1[3]==0)&&(t2[3]==0)&&(t3[3]==0)) {A4=a4; B4=b4; C4=c4; D4=d4; E4=e4;
+for (j4 = 4; j4 < 10; j4++){ if (t4[j4]==1){sumA4=sumA4+ar1[j4]; sumB4=sumB4+ar2[j4]; sumC4=sumC4+ar3[j4]; sumD4=sumD4+ar4[j4]; sumE4=sumE4+ar5[j4];
+if (maxA4<ar1[j4]){maxA4=ar1[j4]} else{minA4=ar1[j4]}; 
+if (maxB4<ar2[j4]){maxB4=ar2[j4]} else{minB4=ar2[j4]};
+if (maxC4<ar3[j4]){maxC4=ar3[j4]} else{minC4=ar3[j4]};
+if (maxD4<ar4[j4]){maxD4=ar4[j4]} else{minD4=ar4[j4]};
+if (maxE4<ar5[j4]){maxE4=ar5[j4]} else{minE4=ar5[j4]};};};
+if ((w1==1)||(w1==4)){A4=sumA4;}; if (w1==2){A4=maxA4;}; if (w1==3){A4=minA4;}; 
+if ((w2==1)||(w2==4)){B4=sumB4;}; if (w2==2){B4=maxB4;}; if (w2==3){B4=minB4;}; 
+if ((w3==1)||(w3==4)){C4=sumC4;}; if (w3==2){C4=maxC4;}; if (w3==3){C4=minC4;}; 
+if ((w4==1)||(w4==4)){D4=sumD4;}; if (w4==2){D4=maxD4;}; if (w4==3){D4=minD4;}; 
+if ((w5==1)||(w5==4)){E4=sumE4;}; if (w5==2){E4=maxE4;}; if (w5==3){E4=minE4;}; 
+var arr4=[A4, B4, C4, D4, E4];
+if ((w5 == 5)) {arr4.splice(4, 1);};                                      
+if ((w4 == 5)) {arr4.splice(3, 1);}; 
+if ((w3 == 5)) {arr4.splice(2, 1);}; 
+if ((w2 == 5)) {arr4.splice(1, 1);}; 
+if ((w1 == 5)) {arr4.shift();};   
+var html='<table class="tab02"><tr>';
+for (var i=0;i<arr4.length;i++){html+='<td>'+arr4[i]+'</td>';}
+html+='</tr></table>';
+document.getElementById('res4').innerHTML=html;};
+
+<!-->
+if ((t1[4]==0)&&(t2[4]==0)&&(t3[4]==0)&&(t4[4]==0)) {A5=a5; B5=b5; C5=c5; D5=d5; E5=e5;
+for (j5 = 5; j5 < 10; j5++){ if (t5[j5]==1){sumA5=sumA5+ar1[j5]; sumB5=sumB5+ar2[j5]; sumC5=sumC5+ar3[j5]; sumD5=sumD5+ar4[j5]; sumE5=sumE5+ar5[j5];
+if (maxA5<ar1[j5]){maxA5=ar1[j5]} else{minA5=ar1[j5]}; 
+if (maxB5<ar2[j5]){maxB5=ar2[j5]} else{minB5=ar2[j5]};
+if (maxC5<ar3[j5]){maxC5=ar3[j5]} else{minC5=ar3[j5]};
+if (maxD5<ar4[j5]){maxD5=ar4[j5]} else{minD5=ar4[j5]};
+if (maxE5<ar5[j5]){maxE5=ar5[j5]} else{minE5=ar5[j5]};};};
+if ((w1==1)||(w1==4)){A5=sumA5;}; if (w1==2){A5=maxA5;}; if (w1==3){A5=minA5;}; 
+if ((w2==1)||(w2==4)){B5=sumB5;}; if (w2==2){B5=maxB5;}; if (w2==3){B5=minB5;}; 
+if ((w3==1)||(w3==4)){C5=sumC5;}; if (w3==2){C5=maxC5;}; if (w3==3){C5=minC5;}; 
+if ((w4==1)||(w4==4)){D5=sumD5;}; if (w4==2){D5=maxD5;}; if (w4==3){D5=minD5;}; 
+if ((w5==1)||(w5==4)){E5=sumE5;}; if (w5==2){E5=maxE5;}; if (w5==3){E5=minE5;}; 
+var arr5=[A5, B5, C5, D5, E5];
+if ((w5 == 5)) {arr5.splice(4, 1);};                                      
+if ((w4 == 5)) {arr5.splice(3, 1);}; 
+if ((w3 == 5)) {arr5.splice(2, 1);}; 
+if ((w2 == 5)) {arr5.splice(1, 1);}; 
+if ((w1 == 5)) {arr5.shift();};   
+var html='<table class="tab02"><tr>';
+for (var i=0;i<arr5.length;i++){html+='<td>'+arr5[i]+'</td>';}
+html+='</tr></table>';
+document.getElementById('res5').innerHTML=html;};
+
+<!-->
+if ((t1[5]==0)&&(t2[5]==0)&&(t3[5]==0)&&(t4[5]==0)&&(t5[5]==0)) {A6=a6; B6=b6; C6=c6; D6=d6; E6=e6;
+for (j6 = 6; j6 < 10; j6++){ if (t6[j6]==1){sumA6=sumA6+ar1[j6]; sumB6=sumB6+ar2[j6]; sumC6=sumC6+ar3[j6]; sumD6=sumD6+ar4[j6]; sumE6=sumE6+ar5[j6];
+if (maxA6<ar1[j6]){maxA6=ar1[j6]} else{minA6=ar1[j6]}; 
+if (maxB6<ar2[j6]){maxB6=ar2[j6]} else{minB6=ar2[j6]};
+if (maxC6<ar3[j6]){maxC6=ar3[j6]} else{minC6=ar3[j6]};
+if (maxD6<ar4[j6]){maxD6=ar4[j6]} else{minD6=ar4[j6]};
+if (maxE6<ar5[j6]){maxE6=ar5[j6]} else{minE6=ar5[j6]};};};
+if ((w1==1)||(w1==4)){A6=sumA6;}; if (w1==2){A6=maxA6;}; if (w1==3){A6=minA6;}; 
+if ((w2==1)||(w2==4)){B6=sumB6;}; if (w2==2){B6=maxB6;}; if (w2==3){B6=minB6;}; 
+if ((w3==1)||(w3==4)){C6=sumC6;}; if (w3==2){C6=maxC6;}; if (w3==3){C6=minC6;}; 
+if ((w4==1)||(w4==4)){D6=sumD6;}; if (w4==2){D6=maxD6;}; if (w4==3){D6=minD6;}; 
+if ((w5==1)||(w5==4)){E6=sumE6;}; if (w5==2){E6=maxE6;}; if (w5==3){E6=minE6;}; 
+var arr6=[A6, B6, C6, D6, E6];
+if ((w5 == 5)) {arr6.splice(4, 1);};                                      
+if ((w4 == 5)) {arr6.splice(3, 1);}; 
+if ((w3 == 5)) {arr6.splice(2, 1);}; 
+if ((w2 == 5)) {arr6.splice(1, 1);}; 
+if ((w1 == 5)) {arr6.shift();};   
+var html='<table class="tab02"><tr>';
+for (var i=0;i<arr6.length;i++){html+='<td>'+arr6[i]+'</td>';}
+html+='</tr></table>';
+document.getElementById('res6').innerHTML=html;};
+
+<!-->
+if ((t1[6]==0)&&(t2[6]==0)&&(t3[6]==0)&&(t4[6]==0)&&(t5[6]==0)&&(t6[6]==0)) {A7=a7; B7=b7; C7=c7; D7=d7; E7=e7;
+for (j7 = 7; j7 < 10; j7++){ if (t7[j7]==1){sumA7=sumA7+ar1[j7]; sumB7=sumB7+ar2[j7]; sumC7=sumC7+ar3[j7]; sumD7=sumD7+ar4[j7]; sumE7=sumE7+ar5[j7];
+if (maxA7<ar1[j7]){maxA7=ar1[j7]} else{minA7=ar1[j7]}; 
+if (maxB7<ar2[j7]){maxB7=ar2[j7]} else{minB7=ar2[j7]};
+if (maxC7<ar3[j7]){maxC7=ar3[j7]} else{minC7=ar3[j7]};
+if (maxD7<ar4[j7]){maxD7=ar4[j7]} else{minD7=ar4[j7]};
+if (maxE7<ar5[j7]){maxE7=ar5[j7]} else{minE7=ar5[j7]};};};
+if ((w1==1)||(w1==4)){A7=sumA7;}; if (w1==2){A7=maxA7;}; if (w1==3){A7=minA7;}; 
+if ((w2==1)||(w2==4)){B7=sumB7;}; if (w2==2){B7=maxB7;}; if (w2==3){B7=minB7;}; 
+if ((w3==1)||(w3==4)){C7=sumC7;}; if (w3==2){C7=maxC7;}; if (w3==3){C7=minC7;}; 
+if ((w4==1)||(w4==4)){D7=sumD7;}; if (w4==2){D7=maxD7;}; if (w4==3){D7=minD7;}; 
+if ((w5==1)||(w5==4)){E7=sumE7;}; if (w5==2){E7=maxE7;}; if (w5==3){E7=minE7;}; 
+var arr7=[A7, B7, C7, D7, E7];
+if ((w5 == 5)) {arr7.splice(4, 1);};                                      
+if ((w4 == 5)) {arr7.splice(3, 1);}; 
+if ((w3 == 5)) {arr7.splice(2, 1);}; 
+if ((w2 == 5)) {arr7.splice(1, 1);}; 
+if ((w1 == 5)) {arr7.shift();};   
+var html='<table class="tab02"><tr>';
+for (var i=0;i<arr7.length;i++){html+='<td>'+arr7[i]+'</td>';}
+html+='</tr></table>';
+document.getElementById('res7').innerHTML=html;};
+
+<!-->
+if ((t1[7]==0)&&(t2[7]==0)&&(t3[7]==0)&&(t4[7]==0)&&(t5[7]==0)&&(t6[7]==0)&&(t7[7]==0)) {A8=a8; B8=b8; C8=c8; D8=d8; E8=e8;
+for (j8 = 8; j8 < 10; j8++){ if (t8[j8]==1){sumA8=sumA8+ar1[j8]; sumB8=sumB8+ar2[j8]; sumC8=sumC8+ar3[j8]; sumD8=sumD8+ar4[j8]; sumE8=sumE8+ar5[j8];
+if (maxA8<ar1[j8]){maxA8=ar1[j8]} else{minA8=ar1[j8]}; 
+if (maxB8<ar2[j8]){maxB8=ar2[j8]} else{minB8=ar2[j8]};
+if (maxC8<ar3[j8]){maxC8=ar3[j8]} else{minC8=ar3[j8]};
+if (maxD8<ar4[j8]){maxD8=ar4[j8]} else{minD8=ar4[j8]};
+if (maxE8<ar5[j8]){maxE8=ar5[j8]} else{minE8=ar5[j8]};};};
+if ((w1==1)||(w1==4)){A8=sumA8;}; if (w1==2){A8=maxA8;}; if (w1==3){A8=minA8;}; 
+if ((w2==1)||(w2==4)){B8=sumB8;}; if (w2==2){B8=maxB8;}; if (w2==3){B8=minB8;}; 
+if ((w3==1)||(w3==4)){C8=sumC8;}; if (w3==2){C8=maxC8;}; if (w3==3){C8=minC8;}; 
+if ((w4==1)||(w4==4)){D8=sumD8;}; if (w4==2){D8=maxD8;}; if (w4==3){D8=minD8;}; 
+if ((w5==1)||(w5==4)){E8=sumE8;}; if (w5==2){E8=maxE8;}; if (w5==3){E8=minE8;}; 
+var arr8=[A8, B8, C8, D8, E8];
+if ((w5 == 5)) {arr8.splice(4, 1);};                                      
+if ((w4 == 5)) {arr8.splice(3, 1);}; 
+if ((w3 == 5)) {arr8.splice(2, 1);}; 
+if ((w2 == 5)) {arr8.splice(1, 1);}; 
+if ((w1 == 5)) {arr8.shift();};   
+var html='<table class="tab02"><tr>';
+for (var i=0;i<arr8.length;i++){html+='<td>'+arr8[i]+'</td>';}
+html+='</tr></table>';
+document.getElementById('res8').innerHTML=html;};
+
+<!-->
+if ((t1[8]==0)&&(t2[8]==0)&&(t3[8]==0)&&(t4[8]==0)&&(t5[8]==0)&&(t6[8]==0)&&(t7[8]==0)&&(t8[8]==0)) {A9=a9; B9=b9; C9=c9; D9=d9; E9=e9;
+for (j9 = 9; j9 < 10; j9++){ if (t9[j9]==1){sumA9=sumA9+ar1[j9]; sumB9=sumB9+ar2[j9]; sumC9=sumC9+ar3[j9]; sumD9=sumD9+ar4[j9]; sumE9=sumE9+ar5[j9];
+if (maxA9<ar1[j9]){maxA9=ar1[j9]} else{minA9=ar1[j9]}; 
+if (maxB9<ar2[j9]){maxB9=ar2[j9]} else{minB9=ar2[j9]};
+if (maxC9<ar3[j9]){maxC9=ar3[j9]} else{minC9=ar3[j9]};
+if (maxD9<ar4[j9]){maxD9=ar4[j9]} else{minD9=ar4[j9]};
+if (maxE9<ar5[j9]){maxE9=ar5[j9]} else{minE9=ar5[j9]};};};
+if ((w1==1)||(w1==4)){A9=sumA9;}; if (w1==2){A9=maxA9;}; if (w1==3){A9=minA9;}; 
+if ((w2==1)||(w2==4)){B9=sumB9;}; if (w2==2){B9=maxB9;}; if (w2==3){B9=minB9;}; 
+if ((w3==1)||(w3==4)){C9=sumC9;}; if (w3==2){C9=maxC9;}; if (w3==3){C9=minC9;}; 
+if ((w4==1)||(w4==4)){D9=sumD9;}; if (w4==2){D9=maxD9;}; if (w4==3){D9=minD9;}; 
+if ((w5==1)||(w5==4)){E9=sumE9;}; if (w5==2){E9=maxE9;}; if (w5==3){E9=minE9;}; 
+var arr9=[A9, B9, C9, D9, E9];
+if ((w5 == 5)) {arr9.splice(4, 1);};                                      
+if ((w4 == 5)) {arr9.splice(3, 1);}; 
+if ((w3 == 5)) {arr9.splice(2, 1);}; 
+if ((w2 == 5)) {arr9.splice(1, 1);}; 
+if ((w1 == 5)) {arr9.shift();};   
+var html='<table class="tab02"><tr>';
+for (var i=0;i<arr9.length;i++){html+='<td>'+arr9[i]+'</td>';}
+html+='</tr></table>';
+document.getElementById('res9').innerHTML=html;};
+
+<!-->
+if ((t1[9]==0)&&(t2[9]==0)&&(t3[9]==0)&&(t4[9]==0)&&(t5[9]==0)&&(t6[9]==0)&&(t7[9]==0)&&(t8[9]==0)&&(t9[9]==0)) {A10=a10; B10=b10; C10=c10; D10=d10; E10=e10;
+                                            sumA10=sumA10; sumB10=sumB10; sumC10=sumC10; sumD10=sumD10; sumE10=sumE10;
+if ((w1==1)||(w1==4)){A10=sumA10;}; if (w1==2){A10=maxA10;}; if (w1==3){A10=minA10;}; 
+if ((w2==1)||(w2==4)){B10=sumB10;}; if (w2==2){B10=maxB10;}; if (w2==3){B10=minB10;}; 
+if ((w3==1)||(w3==4)){C10=sumC10;}; if (w3==2){C10=maxC10;}; if (w3==3){C10=minC10;};
+if ((w4==1)||(w4==4)){D10=sumD10;}; if (w4==2){D10=maxD10;}; if (w4==3){D10=minD10;}; 
+if ((w5==1)||(w5==4)){E10=sumE10;}; if (w5==2){E10=maxE10;}; if (w5==3){E10=minE10;}; 
+var arr10=[A10, B10, C10, D10, E10];
+if ((w5 == 5)) {arr10.splice(4, 1);};                                      
+if ((w4 == 5)) {arr10.splice(3, 1);}; 
+if ((w3 == 5)) {arr10.splice(2, 1);}; 
+if ((w2 == 5)) {arr10.splice(1, 1);}; 
+if ((w1 == 5)) {arr10.shift();};   
+var html='<table class="tab02"><tr>';
+for (var i=0;i<arr10.length;i++){html+='<td>'+arr10[i]+'</td>';}
+html+='</tr></table>';
+document.getElementById('res10').innerHTML=html;
+};};};
+
+</script>
+
+</body>
+
+</html>
