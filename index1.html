@@ -211,26 +211,10 @@ if (  (  (/[^[0-9]/.test(e1)) || (/[^[0-9]/.test(e2))  || (/[^[0-9]/.test(e3)) |
 
 if ((w1 == 1) || (w1 == 2) || (w1 == 3)) {a1= +a1; a2= +a2; a3= +a3; a4= +a4; a5= +a5; a6= +a6; a7= +a7; a8= +a8; a9= +a9; a10= +a10;} 
 if ((w2 == 1) || (w2 == 2) || (w2 == 3)) {b1= +b1; b2= +b2; b3= +b3; b4= +b4; b5= +b5; b6= +b6; b7= +b7; b8= +b8; b9= +b9; b10= +b10;}
-if ((w3 == 1) || (w3 == 2) || (w3 == 3)) {c1= +c1; c2= +c2; c3= +c3; c4= +c4; c5= +c5; c6= +c6; c7= +c7; c8= +c8; c9= +c9; c10= +d10;}
+if ((w3 == 1) || (w3 == 2) || (w3 == 3)) {c1= +c1; c2= +c2; c3= +c3; c4= +c4; c5= +c5; c6= +c6; c7= +c7; c8= +c8; c9= +c9; c10= +c10;}
 if ((w4 == 1) || (w4 == 2) || (w4 == 3)) {d1= +d1; d2= +d2; d3= +d3; d4= +d4; d5= +d5; d6= +d6; d7= +d7; d8= +d8; d9= +d9; d10= +d10;}
 if ((w5 == 1) || (w5 == 2) || (w5 == 3)) {e1= +e1; e2= +e2; e3= +e3; e4= +e4; e5= +e5; e6= +e6; e7= +e7; e8= +e8; e9= +e9; e10= +e10;}
 
-<!--Переменные для подсчета суммы, макс, мин элемента, конкатенации--> 
-var sumA1=a1; var sumA2=a2; var sumA3=a3; var sumA4=a4; var sumA5=a5; var sumA6=a6; var sumA7=a7; var sumA8=a8; var sumA9=a9; var sumA10=a10;
-var maxA1=a1; var maxA2=a2; var maxA3=a3; var maxA4=a4; var maxA5=a5; var maxA6=a6; var maxA7=a7; var maxA8=a8; var maxA9=a9; var maxA10=a10;
-var minA1=a1; var minA2=a2; var minA3=a3; var minA4=a4; var minA5=a5; var minA6=a6; var minA7=a7; var minA8=a8; var minA9=a9; var minA10=a10;
-var sumB1=b1; var sumB2=b2; var sumB3=b3; var sumB4=b4; var sumB5=b5; var sumB6=b6; var sumB7=b7; var sumB8=b8; var sumB9=b9; var sumB10=b10;
-var maxB1=b1; var maxB2=b2; var maxB3=b3; var maxB4=b4; var maxB5=b5; var maxB6=b6; var maxB7=b7; var maxB8=b8; var maxB9=b9; var maxB10=b10;
-var minB1=b1; var minB2=b2; var minB3=b3; var minB4=b4; var minB5=b5; var minB6=b6; var minB7=b7; var minB8=b8; var minB9=b9; var minB10=b10;
-var sumC1=c1; var sumC2=c2; var sumC3=c3; var sumC4=c4; var sumC5=c5; var sumC6=c6; var sumC7=c7; var sumC8=c8; var sumC9=c9; var sumC10=c10;
-var maxC1=c1; var maxC2=c2; var maxC3=c3; var maxC4=c4; var maxC5=c5; var maxC6=c6; var maxC7=c7; var maxC8=c8; var maxC9=c9; var maxC10=c10;
-var minC1=c1; var minC2=c2; var minC3=c3; var minC4=c4; var minC5=c5; var minC6=c6; var minC7=c7; var minC8=c8; var minC9=c9; var minC10=c10;
-var sumD1=d1; var sumD2=d2; var sumD3=d3; var sumD4=d4; var sumD5=d5; var sumD6=d6; var sumD7=d7; var sumD8=d8; var sumD9=d9; var sumD10=d10;
-var maxD1=d1; var maxD2=d2; var maxD3=d3; var maxD4=d4; var maxD5=d5; var maxD6=d6; var maxD7=d7; var maxD8=d8; var maxD9=d9; var maxD10=d10;
-var minD1=d1; var minD2=d2; var minD3=d3; var minD4=d4; var minD5=d5; var minD6=d6; var minD7=d7; var minD8=d8; var minD9=d9; var minD10=d10;
-var sumE1=e1; var sumE2=e2; var sumE3=e3; var sumE4=e4; var sumE5=e5; var sumE6=e6; var sumE7=e7; var sumE8=e8; var sumE9=e9; var sumE10=e10;
-var maxE1=e1; var maxE2=e2; var maxE3=e3; var maxE4=e4; var maxE5=e5; var maxE6=e6; var maxE7=e7; var maxE8=e8; var maxE9=e9; var maxE10=e10;
-var minE1=e1; var minE2=e2; var minE3=e3; var minE4=e4; var minE5=e5; var minE6=e6; var minE7=e7; var minE8=e8; var minE9=e9; var minE10=e10;
 
 var ar1=[a1, a2, a3, a4, a5, a6, a7, a8, a9, a10];
 var ar2=[b1, b2, b3, b4, b5, b6, b7, b8, b9, b10];
@@ -241,8 +225,9 @@ var ar5=[e1, e2, e3, e4, e5, e6, e7, e8, e9, e10];
 if ((w1 != 6) && (w2 != 6) && (w3 != 6) && (w4 != 6) && (w5 != 6)) {xr1=0; alert("Выберите критерий!")} else {xr1=1};
 
 if (xr1 == 1){ 
-<!--Группировка, например, n строк по 5 критериям (правда, без сумм,мах,мин и вывода таблицы, просто идея с функцией уникального элемента)  -->
+<!--Группировка, например, n строк по 5 критериям (правда, без мах,мин просто идея с функцией уникального элемента)  -->
 var n = ar1.length, k1 = 0, A1 = [], B1 = [], C1 = [], D1 = [], E1 = [], k2 = 0, k3 = 0, k4 = 0, k5 = 0; SumA = [];SumB = [];SumC = [];SumD = [];SumE = [];
+MaxA = [];MaxB = [];MaxC = [];MaxD = [];MaxE = []; MinA = [];MinB = [];MinC = [];MinD = [];MinE = [];
     for (var i = 0; i < n; i++) { var j = 0; 
                                   while ((j < k1) &&
                                         ( (A1[j] !== ar1[ i ])&&(w1==6) ||
@@ -250,11 +235,64 @@ var n = ar1.length, k1 = 0, A1 = [], B1 = [], C1 = [], D1 = [], E1 = [], k2 = 0,
                                           (C1[j] !== ar3[ i ])&&(w3==6) ||
                                           (D1[j] !== ar4[ i ])&&(w4==6) ||
                                           (E1[j] !== ar5[ i ])&&(w5==6)   )){j++;}; 
-if (A1[j] == ar1[ i ]) {SumA[j] = SumA[j] + ar1[ i ];} 
-if (B1[j] == ar2[ i ]) {SumB[j] = SumB[j] + ar2[ i ];}
-if (C1[j] == ar1[ i ]) {SumC[j] = SumC[j] + ar3[ i ];} 
-if (D1[j] == ar3[ i ]) {SumD[j] = SumD[j] + ar4[ i ];}                                                                             
-if (E1[j] == ar4[ i ]) {SumE[j] = SumE[j] + ar5[ i ];} 
+
+if ( ((w1==1)||(w1==4))&&
+              (
+               (  B1[j] !== ar2[ i ]&&(w2==6)||(w2!=6)  ) && 
+               (  C1[j] !== ar3[ i ]&&(w3==6)||(w3!=6)  ) &&
+               (  D1[j] !== ar4[ i ]&&(w4==6)||(w4!=6)  ) &&
+               (  E1[j] !== ar5[ i ]&&(w5==6)||(w5!=6)  )
+               )                                   
+   ){SumA[j] = ar1[ i ];} else {SumA[j] = SumA[j]+ar1[ i ];}
+ 
+
+if ( ((w2==1)||(w2==4))&&
+              (
+               (  A1[j] !== ar1[ i ]&&(w1==6)||(w1!=6)  ) && 
+               (  C1[j] !== ar3[ i ]&&(w3==6)||(w3!=6)  ) &&
+               (  D1[j] !== ar4[ i ]&&(w4==6)||(w4!=6)  ) &&
+               (  E1[j] !== ar5[ i ]&&(w5==6)||(w5!=6)  )
+               )                                   
+   ){SumB[j] = ar2[ i ];} else {SumB[j] = SumB[j]+ar2[ i ];}
+
+
+
+if ( ((w3==1)||(w3==4))&&
+              (
+               (  A1[j] !== ar1[ i ]&&(w1==6)||(w1!=6)  ) && 
+               (  B1[j] !== ar2[ i ]&&(w2==6)||(w2!=6)  ) &&
+               (  D1[j] !== ar4[ i ]&&(w4==6)||(w4!=6)  ) &&
+               (  E1[j] !== ar5[ i ]&&(w5==6)||(w5!=6)  )
+               )                                   
+   ){SumC[j] = ar3[ i ];} else {SumC[j] = SumC[j]+ar3[ i ];}
+
+
+if ( ((w4==1)||(w4==4))&&
+              (
+               (  A1[j] !== ar1[ i ]&&(w1==6)||(w1!=6)  ) && 
+               (  B1[j] !== ar2[ i ]&&(w2==6)||(w2!=6)  ) &&
+               (  C1[j] !== ar3[ i ]&&(w3==6)||(w3!=6)  ) &&
+               (  E1[j] !== ar5[ i ]&&(w5==6)||(w5!=6)  )
+               )                                   
+   ){SumD[j] = ar4[ i ];} else {SumD[j] = SumD[j]+ar4[ i ];}
+
+
+if ( ((w5==1)||(w5==4))&&
+              (
+               (  A1[j] !== ar1[ i ]&&(w1==6)||(w1!=6)  ) && 
+               (  B1[j] !== ar2[ i ]&&(w2==6)||(w2!=6)  ) &&
+               (  C1[j] !== ar3[ i ]&&(w3==6)||(w3!=6)  ) &&
+               (  D1[j] !== ar4[ i ]&&(w4==6)||(w4!=6)  )
+               )                                   
+   ){SumE[j] = ar5[ i ];} else {SumE[j] = SumE[j]+ar5[ i ];}
+
+
+
+
+
+
+
+
 
 
 
@@ -266,13 +304,21 @@ if (j == k1) {A1[k1++] = ar1[ i ];
               E1[k5++] = ar5[ i ];}; };};
 
    
-
+for (var i=0;i<A1.length;i++){
+                              for (var j=1;j<2;j++){ if((w1==j)||(w1==4)){A1[i]=SumA[i];};
+                                                     if((w2==j)||(w2==4)){B1[i]=SumB[i];};
+                                                     if((w3==j)||(w3==4)){C1[i]=SumC[i];};
+                                                     if((w4==j)||(w5==4)){D1[i]=SumD[i];};
+                                                     if((w5==j)||(w6==4)){E1[i]=SumE[i];};
+                                                    };
+                               };
 
 
 var t='<table class="tab02"><tr><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th></tr>';
 for (var i=0;i<A1.length;i++){t+='<tr><td>'+A1[i]+'</td><td>'+B1[i]+'</td><td>'+C1[i]+'</td><td>'+D1[i]+'</td><td>'+E1[i]+'</td></tr>' ;}
 t+='</table>';
 document.getElementById('res11').innerHTML=t;
+
 };
 
 
