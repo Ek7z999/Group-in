@@ -148,17 +148,7 @@ E:
 </form>
 
 <!--Для итоговых таблиц--> 
-<div id="res0"></div>
-<div id="res1"></div>
-<div id="res2"></div>
-<div id="res3"></div>
-<div id="res4"></div>
-<div id="res5"></div>
-<div id="res6"></div>
-<div id="res7"></div>
-<div id="res8"></div>
-<div id="res9"></div>
-<div id="res10"></div>
+<div id="res11"></div>
 
 <!---Для коррект данных ячеек-->
 <body onload="kor('myTable')">
@@ -209,7 +199,8 @@ var w2=document.getElementById('s2').value;
 var w3=document.getElementById('s3').value;
 var w4=document.getElementById('s4').value;
 var w5=document.getElementById('s5').value;
-var w=[w1, w2, w3, w4, w5];	
+
+	
 
 if (  (  (/[^[0-9]/.test(a1)) || (/[^[0-9]/.test(a2))  || (/[^[0-9]/.test(a3)) || (/[^[0-9]/.test(a4)) || (/[^[0-9]/.test(a5)) || (/[^[0-9]/.test(a6))  || (/[^[0-9]/.test(a7))  || (/[^[0-9]/.test(a8))  || (/[^[0-9]/.test(a9)) || (/[^[0-9]/.test(a10))  ) &&   ((w1 == 1) || (w1 == 2) || (w1 == 3))  ){alert('В столбец А не введено число');}
 if (  (  (/[^[0-9]/.test(b1)) || (/[^[0-9]/.test(b2))  || (/[^[0-9]/.test(b3)) || (/[^[0-9]/.test(b4)) || (/[^[0-9]/.test(b5)) || (/[^[0-9]/.test(b6))  || (/[^[0-9]/.test(b7))  || (/[^[0-9]/.test(b8))  || (/[^[0-9]/.test(b9)) || (/[^[0-9]/.test(b10))  ) &&   ((w2 == 1) || (w2 == 2) || (w2 == 3))  ){alert('В столбец B не введено число');}
@@ -241,18 +232,6 @@ var sumE1=e1; var sumE2=e2; var sumE3=e3; var sumE4=e4; var sumE5=e5; var sumE6=
 var maxE1=e1; var maxE2=e2; var maxE3=e3; var maxE4=e4; var maxE5=e5; var maxE6=e6; var maxE7=e7; var maxE8=e8; var maxE9=e9; var maxE10=e10;
 var minE1=e1; var minE2=e2; var minE3=e3; var minE4=e4; var minE5=e5; var minE6=e6; var minE7=e7; var minE8=e8; var minE9=e9; var minE10=e10;
 
-var St0=["A", "B", "C", "D", "E"];
-var St1=[a1, b1, c1, d1, e1];
-var St2=[a2, b2, c2, d2, e2];
-var St3=[a3, b3, c3, d3, e3];
-var St4=[a4, b4, c4, d4, e4];
-var St5=[a5, b5, c5, d5, e5];
-var St6=[a6, b6, c6, d6, e6];
-var St7=[a7, b7, c7, d7, e7];
-var St8=[a8, b8, c8, d8, e8];
-var St9=[a9, b9, c9, d9, e9];
-var St10=[a10, b10, c10, d10, e10];
-
 var ar1=[a1, a2, a3, a4, a5, a6, a7, a8, a9, a10];
 var ar2=[b1, b2, b3, b4, b5, b6, b7, b8, b9, b10];
 var ar3=[c1, c2, c3, c4, c5, c6, c7, c8, c9, c10];
@@ -263,39 +242,42 @@ if ((w1 != 6) && (w2 != 6) && (w3 != 6) && (w4 != 6) && (w5 != 6)) {xr1=0; alert
 
 if (xr1 == 1){ 
 <!--Группировка, например, n строк по 5 критериям (правда, без сумм,мах,мин и вывода таблицы, просто идея с функцией уникального элемента)  -->
-var n = ar1.length, k1 = 0, A1 = [], B1 = [], C1 = [], D1 = [], E1 = [], k2 = 0, k3 = 0, k4 = 0, k5 = 0 ;
-    for (var i = 0; i < n; i++) { var j = 0;
+var n = ar1.length, k1 = 0, A1 = [], B1 = [], C1 = [], D1 = [], E1 = [], k2 = 0, k3 = 0, k4 = 0, k5 = 0; SumA = [];SumB = [];SumC = [];SumD = [];SumE = [];
+    for (var i = 0; i < n; i++) { var j = 0; 
                                   while ((j < k1) &&
                                         ( (A1[j] !== ar1[ i ])&&(w1==6) ||
                                           (B1[j] !== ar2[ i ])&&(w2==6) ||
                                           (C1[j] !== ar3[ i ])&&(w3==6) ||
                                           (D1[j] !== ar4[ i ])&&(w4==6) ||
-                                          (E1[j] !== ar5[ i ])&&(w5==6)   )) {j++;}; 
-                                                                              if (j == k1) {A1[k1++] = ar1[ i ];
-                                                                                            B1[k2++] = ar2[ i ];
-                                                                                            C1[k3++] = ar3[ i ];
-                                                                                            D1[k4++] = ar4[ i ];
-                                                                                            E1[k5++] = ar5[ i ];}; };};
+                                          (E1[j] !== ar5[ i ])&&(w5==6)   )){j++;}; 
+if (A1[j] == ar1[ i ]) {SumA[j] = SumA[j] + ar1[ i ];} 
+if (B1[j] == ar2[ i ]) {SumB[j] = SumB[j] + ar2[ i ];}
+if (C1[j] == ar1[ i ]) {SumC[j] = SumC[j] + ar3[ i ];} 
+if (D1[j] == ar3[ i ]) {SumD[j] = SumD[j] + ar4[ i ];}                                                                             
+if (E1[j] == ar4[ i ]) {SumE[j] = SumE[j] + ar5[ i ];} 
 
-    
-document.write(St0);document.write("<p>");
-document.write(St1);document.write("<p>");
-document.write(St2);document.write("<p>");
-document.write(St3);document.write("<p>");
-document.write(St4);document.write("<p>");
-document.write(St5);document.write("<p>");
-document.write(St6);document.write("<p>");
-document.write(St7);document.write("<p>");
-document.write(St8);document.write("<p>");
-document.write(St9);document.write("<p>");
-document.write(St10);document.write("<p>");
-document.write("------------------------------------"); document.write("<p>");
-document.write("Столбец А" + " "+ A1);document.write("<p>"); 
-document.write("Столбец B" + " " + B1);document.write("<p>"); 
-document.write("Столбец C" + " " + C1);document.write("<p>"); 
-document.write("Столбец D" + " " + D1);document.write("<p>"); 
-document.write("Столбец E" + " " + E1);document.write("<p>"); 
 
+
+
+if (j == k1) {A1[k1++] = ar1[ i ];
+              B1[k2++] = ar2[ i ];
+              C1[k3++] = ar3[ i ];
+              D1[k4++] = ar4[ i ];
+              E1[k5++] = ar5[ i ];}; };};
+
+   
+
+
+
+var t='<table class="tab02"><tr><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th></tr>';
+for (var i=0;i<A1.length;i++){t+='<tr><td>'+A1[i]+'</td><td>'+B1[i]+'</td><td>'+C1[i]+'</td><td>'+D1[i]+'</td><td>'+E1[i]+'</td></tr>' ;}
+t+='</table>';
+document.getElementById('res11').innerHTML=t;
+document.write("Сум А" + " " + SumA);document.write("<p>"); 
+document.write("Сум B" + " " + SumB);document.write("<p>"); 
+document.write("Сум C" + " " + SumC);document.write("<p>"); 
+document.write("Сум D" + " " + SumD);document.write("<p>"); 
+document.write("Сум E" + " " + SumE);document.write("<p>"); 
 };
 
 
