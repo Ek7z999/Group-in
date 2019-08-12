@@ -32,25 +32,24 @@
          background-color: #C0C0C0;    
          font-size: 18pt;
 }
-  .tab02 td,th {border:1px solid #000000;
+  
+  .tab02 th {background-color: #DEB887;
+border:1px solid #000000;
          border-left:2px solid #000000;
          border-rigth:2px solid #000000;
          overflow: hidden;
          padding:0;
          width:200px;}
 
-.tab03 {border-collapse:collapse;
-         background-color: #DEB887;    
-         font-size: 18pt;
-         text-align: center;
-         font-weight:bold}
 
-  .tab03 td {border:1px solid #000000;
-         border-top:2px solid #000000;
+  .tab02 td {border:1px solid #000000;
          border-left:2px solid #000000;
-         border-rigth:2px solid #000000;          
+         border-rigth:2px solid #000000;
+         overflow: hidden;
          padding:0;
          width:200px;}
+
+
 
  .www {width: 200px;            
         font-size: 16pt;}  
@@ -66,17 +65,21 @@
 <body>
 <!--Таблица исходная--> 
 <table id="myTable" class="tab01" >
-  <tr>         <th>А</th>          <th>B</th>                  <th>C</th>                <th>D</th>              <th>E</th>       </tr>
-  <tr> <td id="box1">100</td>   <td id="box2">40</td>   <td id="box3">10</td>     <td id="box4">1</td>    <td id="box5">20</td>   </tr>
-  <tr> <td id="box6">100</td>   <td id="box7">41</td>   <td id="box8">11</td>     <td id="box9">2</td>    <td id="box10">21</td>  </tr>
-  <tr> <td id="box11">300</td>  <td id="box12">42</td>  <td id="box13">12</td>     <td id="box14">3</td>   <td id="box15">22</td>  </tr>
-  <tr> <td id="box16">400</td>  <td id="box17">43</td>  <td id="box18">13</td>     <td id="box19">4</td>   <td id="box20">23</td>  </tr>
-  <tr> <td id="box21">500</td>  <td id="box22">44</td>  <td id="box23">14</td>     <td id="box24">5</td>   <td id="box25">24</td>  </tr>
-  <tr> <td id="box26">600</td>  <td id="box27">45</td>  <td id="box28">15</td>     <td id="box29">6</td>   <td id="box30">25</td>  </tr>
-  <tr> <td id="box31">700</td>  <td id="box32">46</td>  <td id="box33">16</td>     <td id="box34">7</td>   <td id="box35">26</td>  </tr>
-  <tr> <td id="box36">800</td>  <td id="box37">47</td>  <td id="box38">17</td>     <td id="box39">8</td>   <td id="box40">27</td>  </tr>
-  <tr> <td id="box41">900</td>  <td id="box42">48</td>  <td id="box43">18</td>     <td id="box44">9</td>   <td id="box45">28</td>  </tr>
-  <tr> <td id="box46">1000</td>  <td id="box47">49</td>  <td id="box48">19</td>     <td id="box49">1</td>   <td id="box50">29</td>  </tr>
+  <tr>  <th>А</th>   <th>B</th>    <th>C</th>    <th>D</th>   <th>E</th>   </tr>
+  <tr> <td>100</td>  <td>40</td>   <td>10</td>   <td>1</td>   <td>20</td>  </tr>
+  <tr> <td>200</td>  <td>41</td>   <td>11</td>   <td>2</td>   <td>21</td>  </tr>
+  <tr> <td>300</td>  <td>42</td>   <td>12</td>   <td>3</td>   <td>22</td>  </tr>
+  <tr> <td>400</td>  <td>43</td>   <td>13</td>   <td>4</td>   <td>23</td>  </tr>
+  <tr> <td>500</td>  <td>44</td>   <td>14</td>   <td>5</td>   <td>24</td>  </tr>
+  <tr> <td>600</td>  <td>45</td>   <td>15</td>   <td>6</td>   <td>25</td>  </tr>
+  <tr> <td>700</td>  <td>46</td>   <td>16</td>   <td>7</td>   <td>26</td>  </tr>
+  <tr> <td>800</td>  <td>47</td>   <td>17</td>   <td>8</td>   <td>27</td>  </tr>
+  <tr> <td>900</td>  <td>48</td>   <td>18</td>   <td>9</td>   <td>28</td>  </tr>
+  <tr> <td>1000</td> <td>49</td>   <td>19</td>   <td>1</td>   <td>29</td>  </tr>
+  <tr> <td>1100</td> <td>49</td>   <td>19</td>   <td>1</td>   <td>29</td>  </tr>
+  <tr> <td>1200</td>  <td>42</td>   <td>12</td>   <td>3</td>   <td>22</td>  </tr>
+  <tr> <td>1300</td>  <td>42</td>   <td>12</td>   <td>3</td>   <td>22</td>  </tr>
+  <tr> <td>1400</td>  <td>47</td>   <td>15</td>   <td>4</td>   <td>26</td>  </tr>
 </table>
 
 
@@ -180,19 +183,6 @@ function kor(znach)
 <!---Функция по нажатию кнопки-->
 function Group1() 
 {
-
-<!--Забираем значения ячеек из исходной таблицы--> 
-var a1= document.getElementById("box1").innerText;   var b1= document.getElementById("box2").innerText;   var c1= document.getElementById("box3").innerText;   var d1= document.getElementById("box4").innerText;   var e1= document.getElementById("box5").innerText;
-var a2= document.getElementById("box6").innerText;   var b2= document.getElementById("box7").innerText;   var c2= document.getElementById("box8").innerText;   var d2= document.getElementById("box9").innerText;   var e2= document.getElementById("box10").innerText;
-var a3= document.getElementById("box11").innerText;  var b3= document.getElementById("box12").innerText;  var c3= document.getElementById("box13").innerText;  var d3= document.getElementById("box14").innerText;  var e3= document.getElementById("box15").innerText;
-var a4= document.getElementById("box16").innerText;  var b4= document.getElementById("box17").innerText;  var c4= document.getElementById("box18").innerText;  var d4= document.getElementById("box19").innerText;  var e4= document.getElementById("box20").innerText;
-var a5= document.getElementById("box21").innerText;  var b5= document.getElementById("box22").innerText;  var c5= document.getElementById("box23").innerText;  var d5= document.getElementById("box24").innerText;  var e5= document.getElementById("box25").innerText;
-var a6= document.getElementById("box26").innerText;  var b6= document.getElementById("box27").innerText;  var c6= document.getElementById("box28").innerText;  var d6= document.getElementById("box29").innerText;  var e6= document.getElementById("box30").innerText;
-var a7= document.getElementById("box31").innerText;  var b7= document.getElementById("box32").innerText;  var c7= document.getElementById("box33").innerText;  var d7= document.getElementById("box34").innerText;  var e7= document.getElementById("box35").innerText;
-var a8= document.getElementById("box36").innerText;  var b8= document.getElementById("box37").innerText;  var c8= document.getElementById("box38").innerText;  var d8= document.getElementById("box39").innerText;  var e8= document.getElementById("box40").innerText;
-var a9= document.getElementById("box41").innerText;  var b9= document.getElementById("box42").innerText;  var c9= document.getElementById("box43").innerText;  var d9= document.getElementById("box44").innerText;  var e9= document.getElementById("box45").innerText;
-var a10= document.getElementById("box46").innerText; var b10= document.getElementById("box47").innerText; var c10= document.getElementById("box48").innerText; var d10= document.getElementById("box49").innerText; var e10= document.getElementById("box50").innerText;
-
 <!--Забираем значения селекторов--> 
 var w1=document.getElementById('s1').value;
 var w2=document.getElementById('s2').value;
@@ -200,100 +190,116 @@ var w3=document.getElementById('s3').value;
 var w4=document.getElementById('s4').value;
 var w5=document.getElementById('s5').value;
 
-	
-
-if (  (  (/[^[0-9]/.test(a1)) || (/[^[0-9]/.test(a2))  || (/[^[0-9]/.test(a3)) || (/[^[0-9]/.test(a4)) || (/[^[0-9]/.test(a5)) || (/[^[0-9]/.test(a6))  || (/[^[0-9]/.test(a7))  || (/[^[0-9]/.test(a8))  || (/[^[0-9]/.test(a9)) || (/[^[0-9]/.test(a10))  ) &&   ((w1 == 1) || (w1 == 2) || (w1 == 3))  ){alert('В столбец А не введено число');}
-if (  (  (/[^[0-9]/.test(b1)) || (/[^[0-9]/.test(b2))  || (/[^[0-9]/.test(b3)) || (/[^[0-9]/.test(b4)) || (/[^[0-9]/.test(b5)) || (/[^[0-9]/.test(b6))  || (/[^[0-9]/.test(b7))  || (/[^[0-9]/.test(b8))  || (/[^[0-9]/.test(b9)) || (/[^[0-9]/.test(b10))  ) &&   ((w2 == 1) || (w2 == 2) || (w2 == 3))  ){alert('В столбец B не введено число');}
-if (  (  (/[^[0-9]/.test(c1)) || (/[^[0-9]/.test(c2))  || (/[^[0-9]/.test(c3)) || (/[^[0-9]/.test(c4)) || (/[^[0-9]/.test(c5)) || (/[^[0-9]/.test(c6))  || (/[^[0-9]/.test(c7))  || (/[^[0-9]/.test(c8))  || (/[^[0-9]/.test(c9)) || (/[^[0-9]/.test(c10))  ) &&   ((w3 == 1) || (w3 == 2) || (w3 == 3))  ){alert('В столбец C не введено число');}
-if (  (  (/[^[0-9]/.test(d1)) || (/[^[0-9]/.test(d2))  || (/[^[0-9]/.test(d3)) || (/[^[0-9]/.test(d4)) || (/[^[0-9]/.test(d5)) || (/[^[0-9]/.test(d6))  || (/[^[0-9]/.test(d7))  || (/[^[0-9]/.test(d8))  || (/[^[0-9]/.test(d9)) || (/[^[0-9]/.test(d10))  ) &&   ((w4 == 1) || (w4 == 2) || (w4 == 3))  ){alert('В столбец D не введено число');}
-if (  (  (/[^[0-9]/.test(e1)) || (/[^[0-9]/.test(e2))  || (/[^[0-9]/.test(e3)) || (/[^[0-9]/.test(e4)) || (/[^[0-9]/.test(e5)) || (/[^[0-9]/.test(e6))  || (/[^[0-9]/.test(e7))  || (/[^[0-9]/.test(e8))  || (/[^[0-9]/.test(e9)) || (/[^[0-9]/.test(e10))  ) &&   ((w5 == 1) || (w5 == 2) || (w5 == 3))  ){alert('В столбец E не введено число');}
 
 
-if ((w1 == 1) || (w1 == 2) || (w1 == 3)) {a1= +a1; a2= +a2; a3= +a3; a4= +a4; a5= +a5; a6= +a6; a7= +a7; a8= +a8; a9= +a9; a10= +a10;} 
-if ((w2 == 1) || (w2 == 2) || (w2 == 3)) {b1= +b1; b2= +b2; b3= +b3; b4= +b4; b5= +b5; b6= +b6; b7= +b7; b8= +b8; b9= +b9; b10= +b10;}
-if ((w3 == 1) || (w3 == 2) || (w3 == 3)) {c1= +c1; c2= +c2; c3= +c3; c4= +c4; c5= +c5; c6= +c6; c7= +c7; c8= +c8; c9= +c9; c10= +c10;}
-if ((w4 == 1) || (w4 == 2) || (w4 == 3)) {d1= +d1; d2= +d2; d3= +d3; d4= +d4; d5= +d5; d6= +d6; d7= +d7; d8= +d8; d9= +d9; d10= +d10;}
-if ((w5 == 1) || (w5 == 2) || (w5 == 3)) {e1= +e1; e2= +e2; e3= +e3; e4= +e4; e5= +e5; e6= +e6; e7= +e7; e8= +e8; e9= +e9; e10= +e10;}
+<!--Забираем значения ячеек из исходной таблицы--> 
+var TableList = new Array();                    
+var tr = document.getElementById("myTable").getElementsByTagName("tr");
+    for(var i=0;i<tr.length;i++){var td = tr.item(i).getElementsByTagName("td");
+                                 TableList[i] = new Array();
+                                 for(var j=0;j<td.length;j++){TableList[i][j] = td.item(j).innerText;};}; 
 
+row= TableList.length-1;col=5;
+var t = new Array(row);for(var i = 0; i < col; i++){t[i] = new Array(row);}
+for(var i = 0; i < col; i++){for(var j = 0; j < row; j++) { t[i][j]=TableList[++j][i];--j}}
 
-var ar1=[a1, a2, a3, a4, a5, a6, a7, a8, a9, a10];
-var ar2=[b1, b2, b3, b4, b5, b6, b7, b8, b9, b10];
-var ar3=[c1, c2, c3, c4, c5, c6, c7, c8, c9, c10];
-var ar4=[d1, d2, d3, d4, d5, d6, d7, d8, d9, d10];
-var ar5=[e1, e2, e3, e4, e5, e6, e7, e8, e9, e10];
+var ar1=t[0];
+var ar2=t[1];
+var ar3=t[2];
+var ar4=t[3];
+var ar5=t[4];
+
+for(var i = 0; i < row; i++){if ((w1 == 1) || (w1 == 2) || (w1 == 3)) {ar1[i]=+ar1[i];} 
+                             if ((w2 == 1) || (w2 == 2) || (w2 == 3)) {ar2[i]=+ar2[i];}
+                             if ((w3 == 1) || (w3 == 2) || (w3 == 3)) {ar3[i]=+ar3[i];} 
+                             if ((w4 == 1) || (w4 == 2) || (w4 == 3)) {ar4[i]=+ar4[i];}
+                             if ((w5 == 1) || (w5 == 2) || (w5 == 3)) {ar5[i]=+ar5[i];};}
+
+for(var i=0;i<ar1.length;i++){	
+if (  (/[^[0-9]/.test(ar1[i])) &&   ((w1 == 1) || (w1 == 2) || (w1 == 3))  ){alert('В столбец А не введено число');}
+if (  (/[^[0-9]/.test(ar2[i])) &&   ((w2 == 1) || (w2 == 2) || (w2 == 3))  ){alert('В столбец B не введено число');}
+if (  (/[^[0-9]/.test(ar3[i])) &&   ((w3 == 1) || (w3 == 2) || (w3 == 3))  ){alert('В столбец C не введено число');}
+if (  (/[^[0-9]/.test(ar4[i])) &&   ((w4 == 1) || (w4 == 2) || (w4 == 3))  ){alert('В столбец D не введено число');}
+if (  (/[^[0-9]/.test(ar5[i])) &&   ((w5 == 1) || (w5 == 2) || (w5 == 3))  ){alert('В столбец E не введено число');}
+};
+
 
 if ((w1 != 6) && (w2 != 6) && (w3 != 6) && (w4 != 6) && (w5 != 6)) {xr1=0; alert("Выберите критерий!")} else {xr1=1};
 
 if (xr1 == 1){ 
-<!--Группировка, например, n строк по 5 критериям (правда, без мах,мин просто идея с функцией уникального элемента)  -->
-var n = ar1.length, k1 = 0, A1 = [], B1 = [], C1 = [], D1 = [], E1 = [], k2 = 0, k3 = 0, k4 = 0, k5 = 0; SumA = [];SumB = [];SumC = [];SumD = [];SumE = [];
-MaxA = [];MaxB = [];MaxC = [];MaxD = [];MaxE = []; MinA = [];MinB = [];MinC = [];MinD = [];MinE = [];
-    for (var i = 0; i < n; i++) { var j = 0; 
-                                  while ((j < k1) &&
-                                        ( (A1[j] !== ar1[ i ])&&(w1==6) ||
-                                          (B1[j] !== ar2[ i ])&&(w2==6) ||
-                                          (C1[j] !== ar3[ i ])&&(w3==6) ||
-                                          (D1[j] !== ar4[ i ])&&(w4==6) ||
-                                          (E1[j] !== ar5[ i ])&&(w5==6)   )){j++;}; 
+<!--Группировка, например, n строк по 5 критериям  -->
+var n = ar1.length, k1 = 0, k2 = 0, k3 = 0, k4 = 0, k5 = 0;
+A1 = [], B1 = [], C1 = [], D1 = [], E1 = [];
+SumA = [];SumB = [];SumC = [];SumD = [];SumE = [];
+MaxA = [];MaxB = [];MaxC = [];MaxD = [];MaxE = [];
+MinA = [];MinB = [];MinC = [];MinD = [];MinE = []; 
+    
+for (var i = 0; i < n; i++) {var j = 0; while ((j < k1) &&
+((A1[j] !== ar1[i])&&(w1==6) ||
+ (B1[j] !== ar2[i])&&(w2==6) ||
+ (C1[j] !== ar3[i])&&(w3==6) ||
+ (D1[j] !== ar4[i])&&(w4==6) ||
+ (E1[j] !== ar5[i])&&(w5==6))){j++;}; 
 
-if ( ((w1==1)||(w1==4))&&
-              (
-               (  B1[j] !== ar2[ i ]&&(w2==6)||(w2!=6)  ) && 
-               (  C1[j] !== ar3[ i ]&&(w3==6)||(w3!=6)  ) &&
-               (  D1[j] !== ar4[ i ]&&(w4==6)||(w4!=6)  ) &&
-               (  E1[j] !== ar5[ i ]&&(w5==6)||(w5!=6)  )
-               )                                   
-   ){SumA[j] = ar1[ i ];} else {SumA[j] = SumA[j]+ar1[ i ];}
+if (((w1==1)||(w1==4))&&
+ ((B1[j] !== ar2[i]&&(w2==6)||(w2!=6)) && 
+  (C1[j] !== ar3[i]&&(w3==6)||(w3!=6)) &&
+  (D1[j] !== ar4[i]&&(w4==6)||(w4!=6)) &&
+  (E1[j] !== ar5[i]&&(w5==6)||(w5!=6)))){SumA[j] = ar1[i];} else{SumA[j] = SumA[j]+ar1[i];}
  
+if (((w2==1)||(w2==4))&&
+ ((A1[j] !== ar1[i]&&(w1==6)||(w1!=6)) && 
+  (C1[j] !== ar3[i]&&(w3==6)||(w3!=6)) &&
+  (D1[j] !== ar4[i]&&(w4==6)||(w4!=6)) &&
+  (E1[j] !== ar5[i]&&(w5==6)||(w5!=6)))){SumB[j] = ar2[i];} else{SumB[j] = SumB[j]+ar2[i];}
 
-if ( ((w2==1)||(w2==4))&&
-              (
-               (  A1[j] !== ar1[ i ]&&(w1==6)||(w1!=6)  ) && 
-               (  C1[j] !== ar3[ i ]&&(w3==6)||(w3!=6)  ) &&
-               (  D1[j] !== ar4[ i ]&&(w4==6)||(w4!=6)  ) &&
-               (  E1[j] !== ar5[ i ]&&(w5==6)||(w5!=6)  )
-               )                                   
-   ){SumB[j] = ar2[ i ];} else {SumB[j] = SumB[j]+ar2[ i ];}
+if (((w3==1)||(w3==4))&&
+ ((A1[j] !== ar1[i]&&(w1==6)||(w1!=6)) && 
+  (B1[j] !== ar2[i]&&(w2==6)||(w2!=6)) &&
+  (D1[j] !== ar4[i]&&(w4==6)||(w4!=6)) &&
+  (E1[j] !== ar5[i]&&(w5==6)||(w5!=6)))){SumC[j] = ar3[i];} else{SumC[j] = SumC[j]+ar3[i];}
 
-
-
-if ( ((w3==1)||(w3==4))&&
-              (
-               (  A1[j] !== ar1[ i ]&&(w1==6)||(w1!=6)  ) && 
-               (  B1[j] !== ar2[ i ]&&(w2==6)||(w2!=6)  ) &&
-               (  D1[j] !== ar4[ i ]&&(w4==6)||(w4!=6)  ) &&
-               (  E1[j] !== ar5[ i ]&&(w5==6)||(w5!=6)  )
-               )                                   
-   ){SumC[j] = ar3[ i ];} else {SumC[j] = SumC[j]+ar3[ i ];}
-
-
-if ( ((w4==1)||(w4==4))&&
-              (
-               (  A1[j] !== ar1[ i ]&&(w1==6)||(w1!=6)  ) && 
-               (  B1[j] !== ar2[ i ]&&(w2==6)||(w2!=6)  ) &&
-               (  C1[j] !== ar3[ i ]&&(w3==6)||(w3!=6)  ) &&
-               (  E1[j] !== ar5[ i ]&&(w5==6)||(w5!=6)  )
-               )                                   
-   ){SumD[j] = ar4[ i ];} else {SumD[j] = SumD[j]+ar4[ i ];}
-
+if (((w4==1)||(w4==4))&&
+ ((A1[j] !== ar1[i]&&(w1==6)||(w1!=6)) && 
+  (B1[j] !== ar2[i]&&(w2==6)||(w2!=6)) &&
+  (C1[j] !== ar3[i]&&(w3==6)||(w3!=6)) &&
+  (E1[j] !== ar5[i]&&(w5==6)||(w5!=6)))){SumD[j] = ar4[i];} else{SumD[j] = SumD[j]+ar4[i];}
 
 if ( ((w5==1)||(w5==4))&&
-              (
-               (  A1[j] !== ar1[ i ]&&(w1==6)||(w1!=6)  ) && 
-               (  B1[j] !== ar2[ i ]&&(w2==6)||(w2!=6)  ) &&
-               (  C1[j] !== ar3[ i ]&&(w3==6)||(w3!=6)  ) &&
-               (  D1[j] !== ar4[ i ]&&(w4==6)||(w4!=6)  )
-               )                                   
-   ){SumE[j] = ar5[ i ];} else {SumE[j] = SumE[j]+ar5[ i ];}
+ ((A1[j] !== ar1[i]&&(w1==6)||(w1!=6)) && 
+  (B1[j] !== ar2[i]&&(w2==6)||(w2!=6)) &&
+  (C1[j] !== ar3[i]&&(w3==6)||(w3!=6)) &&
+  (D1[j] !== ar4[i]&&(w4==6)||(w4!=6)))){SumE[j] = ar5[i];} else{SumE[j] = SumE[j]+ar5[i];}
 
+if (((w1==2)||(w1==3))&&
+ ((B1[j] !== ar2[i]&&(w2==6)||(w2!=6)) && 
+  (C1[j] !== ar3[i]&&(w3==6)||(w3!=6)) &&
+  (D1[j] !== ar4[i]&&(w4==6)||(w4!=6)) &&
+  (E1[j] !== ar5[i]&&(w5==6)||(w5!=6)))){MaxA[j] = ar1[i];MinA[j] = ar1[i];} else{if(MaxA[j]<ar1[i]) {MaxA[j] = ar1[i]} else{MinA[j] = ar1[i]} };
 
+if (((w2==2)||(w2==3))&&
+ ((A1[j] !== ar1[i]&&(w1==6)||(w1!=6)) && 
+  (C1[j] !== ar3[i]&&(w3==6)||(w3!=6)) &&
+  (D1[j] !== ar4[i]&&(w4==6)||(w4!=6)) &&
+  (E1[j] !== ar5[i]&&(w5==6)||(w5!=6)))){MaxB[j] = ar2[i];MinB[j] = ar2[i];} else{if(MaxB[j]<ar2[i]) {MaxB[j] = ar2[i]} else{MinB[j] = ar2[i]};};
 
+if (((w3==2)||(w3==3))&&
+  ((A1[j] !== ar1[i]&&(w1==6)||(w1!=6)) && 
+   (B1[j] !== ar2[i]&&(w2==6)||(w2!=6)) &&
+   (D1[j] !== ar4[i]&&(w4==6)||(w4!=6)) &&
+   (E1[j] !== ar5[i]&&(w5==6)||(w5!=6)))){MaxC[j] = ar3[i];MinC[j] = ar3[i];} else{if(MaxC[j]<ar3[i]) {MaxC[j] = ar3[i]} else{MinC[j] = ar3[i]};};
 
+if ( ((w4==2)||(w4==3))&&
+  ((A1[j] !== ar1[i]&&(w1==6)||(w1!=6)) && 
+   (B1[j] !== ar2[i]&&(w2==6)||(w2!=6)) &&
+   (C1[j] !== ar3[i]&&(w3==6)||(w3!=6)) &&
+   (E1[j] !== ar5[i]&&(w5==6)||(w5!=6)))){MaxD[j] = ar4[i];MinD[j] = ar4[i];} else {if(MaxD[j]<ar4[i]) {MaxD[j] = ar4[i]} else{MinD[j] = ar4[i]};};
 
-
-
-
-
+if (((w5==2)||(w5==3))&&
+  ((A1[j] !== ar1[i]&&(w1==6)||(w1!=6)) && 
+   (B1[j] !== ar2[i]&&(w2==6)||(w2!=6)) &&
+   (C1[j] !== ar3[i]&&(w3==6)||(w3!=6)) &&
+   (D1[j] !== ar4[i]&&(w4==6)||(w4!=6)))){MaxE[j] = ar5[i];MinE[j] = ar5[i];} else {if(MaxE[j]<ar5[i]) {MaxE[j] = ar5[i]} else{MinE[j] = ar5[i]};};
 
 
 
@@ -301,23 +307,54 @@ if (j == k1) {A1[k1++] = ar1[ i ];
               B1[k2++] = ar2[ i ];
               C1[k3++] = ar3[ i ];
               D1[k4++] = ar4[ i ];
-              E1[k5++] = ar5[ i ];}; };};
+              E1[k5++] = ar5[ i ];};};};
+  
+dl=A1.length || B1.length || C1.length || D1.length || D1.length;
 
-   
-for (var i=0;i<A1.length;i++){
-                              for (var j=1;j<2;j++){ if((w1==j)||(w1==4)){A1[i]=SumA[i];};
+for (var i=0;i<dl;i++){for (var j=1;j<2;j++){if((w1==j)||(w1==4)){A1[i]=SumA[i];};
                                                      if((w2==j)||(w2==4)){B1[i]=SumB[i];};
                                                      if((w3==j)||(w3==4)){C1[i]=SumC[i];};
-                                                     if((w4==j)||(w5==4)){D1[i]=SumD[i];};
-                                                     if((w5==j)||(w6==4)){E1[i]=SumE[i];};
-                                                    };
-                               };
+                                                     if((w4==j)||(w4==4)){D1[i]=SumD[i];};
+                                                     if((w5==j)||(w5==4)){E1[i]=SumE[i];};};};
+
+for (var i=0;i<dl;i++){for (var j=2;j<3;j++){if((w1==j)){A1[i]=MaxA[i];};
+                                             if((w2==j)){B1[i]=MaxB[i];};
+                                             if((w3==j)){C1[i]=MaxC[i];};
+                                             if((w4==j)){D1[i]=MaxD[i];};
+                                             if((w5==j)){E1[i]=MaxE[i];};};};
+
+for (var i=0;i<dl;i++){for (var j=3;j<4;j++){if((w1==j)){A1[i]=MinA[i];};
+                                             if((w2==j)){B1[i]=MinB[i];};
+                                             if((w3==j)){C1[i]=MinC[i];};
+                                             if((w4==j)){D1[i]=MinD[i];};
+                                             if((w5==j)){E1[i]=MinE[i];};};};
 
 
-var t='<table class="tab02"><tr><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th></tr>';
-for (var i=0;i<A1.length;i++){t+='<tr><td>'+A1[i]+'</td><td>'+B1[i]+'</td><td>'+C1[i]+'</td><td>'+D1[i]+'</td><td>'+E1[i]+'</td></tr>' ;}
+
+
+
+var arr0=["A", "B", "C", "D", "E"];
+var t='<table class="tab02"><tr>';
+if(w1==5){t01=0;}else{t01='<th>'+arr0[0]+'</th>';}; 
+if(w2==5){t02=0;}else{t02='<th>'+arr0[1]+'</th>';};
+if(w3==5){t03=0;}else{t03='<th>'+arr0[2]+'</th>';}; 
+if(w4==5){t04=0;}else{t04='<th>'+arr0[3]+'</th>';}; 
+if(w5==5){t05=0;}else{t05='<th>'+arr0[4]+'</th>';}; 
+t0='</tr>'; t+=t01+t02+t03+t04+t05+t0;
+for (var i=0;i<dl;i++){
+t00='<tr>';
+
+if(w1==5){t001=0;}else{t001='<td>'+A1[i]+'</td>';}; 
+if(w2==5){t002=0;}else{t002='<td>'+B1[i]+'</td>';};
+if(w3==5){t003=0;}else{t003='<td>'+C1[i]+'</td>';}; 
+if(w4==5){t004=0;}else{t004='<td>'+D1[i]+'</td>';}; 
+if(w5==5){t005=0;}else{t005='<td>'+E1[i]+'</td>';}; 
+t000='</tr>';
+t+=t00+t001+t002+t003+t004+t005+t000;}
 t+='</table>';
 document.getElementById('res11').innerHTML=t;
+
+
 
 };
 
